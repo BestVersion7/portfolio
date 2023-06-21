@@ -1,0 +1,300 @@
+@mixin mQ($width) {
+    @media (min-width: $width) {
+        @content;
+    }
+}
+
+$borderRadius: 2em;
+$boxShadow: 0 1em 1em 0 gray;
+
+// button
+.icons {
+    height: 2.5em;
+    width: 2.5em;
+    background-color: lightblue;
+}
+
+// navigation
+header {
+    // display: none;
+    background-color: rgb(27, 20, 3);
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    height: 4em;
+    @include mQ(50em) {
+        display: block;
+    }
+    .navButton {
+        height: 4em;
+        width: 2.5em;
+        margin-left: 1.75em;
+        color: rgb(137, 224, 137);
+        z-index: 5;
+        @include mQ(50em) {
+            display: none;
+        }
+    }
+    .section-link-container-mobile {
+        display: none;
+        @include mQ(50em) {
+            display: block;
+        }
+    }
+    .section-link-container-desktop {
+        position: absolute;
+        top: 0em;
+        z-index: -2;
+        .section-link-container-blank {
+            height: 4em;
+            @include mQ(50em) {
+                display: none;
+            }
+        }
+        background-color: rgb(53, 49, 49);
+        height: 100vh;
+        width: 20em;
+        @include mQ(50em) {
+            background-color: rgb(24, 21, 14);
+            height: 2em;
+            width: auto;
+        }
+    }
+    .section-nav-links {
+        font-size: 2em;
+        display: block;
+        text-align: center;
+        line-height: 2em;
+        color: rgb(137, 224, 137);
+        border-top: 0.1px solid rgb(197, 245, 197);
+        border-bottom: 0.1px solid rgb(197, 245, 197);
+        height: 2em;
+
+        &:link {
+            text-decoration: none;
+        }
+        &:hover {
+            color: rgb(79, 209, 137);
+            background-color: lighten(rgb(53, 51, 44), 13);
+        }
+        @include mQ(50em) {
+            display: inline-block;
+            width: 5em;
+            border-top: none;
+            border-bottom: none;
+            border-right: 0.1px solid rgb(197, 245, 197);
+        }
+    }
+}
+
+.section-work-container {
+    margin: 0 1em;
+    @include mQ(30em) {
+        margin: 0 3em;
+    }
+    @include mQ(50em) {
+        margin: 0 5em;
+    }
+    .section-work-container-items {
+        @include mQ(30em) {
+            display: grid;
+            grid-template-columns: 13em 1fr;
+        }
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    margin: auto;
+    max-width: 100em;
+    background-color: lightgray;
+    // background-color: rgb(251, 251, 251);
+
+    .quote {
+        text-align: center;
+    }
+    h1,
+    h2,
+    h3 {
+        text-align: center;
+    }
+    p {
+        // padding: 0 1em;
+    }
+}
+
+.section-skills {
+    background: rgb(231, 230, 158);
+    border-radius: $borderRadius;
+    box-shadow: $boxShadow;
+    .section-skills-item {
+        display: grid;
+        // word-wrap: break-word;
+
+        margin: 0 1em;
+        @include mQ(30em) {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 5em;
+            margin: 0 3em;
+        }
+        @include mQ(50em) {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 10em;
+            margin: 0 5em;
+        }
+        .section-skills-item-mapped {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            .section-skills-item-mapped-icon {
+                justify-self: right;
+            }
+        }
+    }
+}
+
+.section-profile {
+    background-color: beige;
+    border-radius: $borderRadius;
+    box-shadow: $boxShadow;
+    h1 {
+        margin-top: 0;
+    }
+    .section-profile-about {
+        margin: 0 1em;
+
+        @include mQ(30em) {
+            display: grid;
+            margin: 0 3em;
+            grid-gap: 3em;
+            grid-template-columns: minmax(auto, 7em) 1fr;
+        }
+        @include mQ(50em) {
+            margin: 0 5em;
+        }
+        .rounded-full {
+            border-radius: 15em;
+        }
+    }
+}
+
+.section-home {
+    border-radius: $borderRadius;
+    box-shadow: $boxShadow;
+    background-image: url(https://res.cloudinary.com/crimson-flamingo/image/upload/v1560960995/3105%20portfolio%20screenshots/own_website_home.jpg);
+    text-align: center;
+    background-size: cover;
+    height: 30em;
+    max-height: 80vh;
+    min-height: -webkit-fill-available;
+    @include mQ(30em) {
+        height: 45em;
+    }
+    @include mQ(50em) {
+        height: 50em;
+    }
+    .section-home-name {
+        position: relative;
+        top: 4em;
+        width: auto;
+        background: yellow;
+        border: solid black;
+        box-shadow: 5px 10px;
+    }
+    .icon-down {
+        position: absolute;
+        background-color: yellow;
+        bottom: 1em;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 4em;
+    }
+}
+
+.section-projects {
+    border-radius: $borderRadius;
+    box-shadow: $boxShadow;
+    background-color: rgb(240, 255, 215);
+    .section-projects-web {
+        // text-align: center;
+        margin: 0 1em;
+        @include mQ(30em) {
+            margin: 0 3em;
+            display: grid;
+            // grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1.5em;
+        }
+        @include mQ(50em) {
+            margin: 0 5em;
+            grid-gap: 3em;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .section-projects-web-items {
+            // width: 100%;
+            border: 0.1em solid black;
+            @include mQ(30em) {
+            }
+        }
+    }
+}
+
+footer {
+    background: darkslategray;
+    text-align: center;
+    color: darken($color: white, $amount: 10);
+    a {
+        padding: 0 0.3em;
+    }
+}
+
+.container-article {
+    display: grid;
+    grid-gap: 0.5em;
+    @include mQ(30em) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include mQ(70em) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .container-article-home {
+        border: 0.1px solid gray;
+        background-color: lighten(lightgreen, 15);
+        box-shadow: 2px 3px black;
+        .container-article-home-link {
+            display: grid;
+            grid-gap: 1em;
+            grid-template-columns: 6em auto;
+            height: 4em;
+            text-decoration: none;
+            padding: 0.3em 0.5em;
+            &:hover {
+                background-color: lightblue;
+            }
+        }
+    }
+}
+
+.container-article-article {
+    h3 {
+        text-align: center;
+    }
+    .container-article-article-author {
+        text-align: center;
+    }
+    figure {
+        display: block;
+        margin: 0;
+        max-width: 50em;
+    }
+}
+.section-article-col2 {
+    display: none;
+    @include mQ(50em) {
+        // position: static;
+        display: block;
+        background-color: lightcyan;
+    }
+}
