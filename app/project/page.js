@@ -1,3 +1,5 @@
+'use client'
+
 import ProjectItemList from "@/components/ProjectItemList";
 import { Quote } from "@/components/Quote";
 
