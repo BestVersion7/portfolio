@@ -1,6 +1,10 @@
 import SkillItemList from "@/components/SkillItemList";
 import { Quote } from "@/components/Quote";
 
+export const metadata = {
+    title: "Skill",
+};
+
 const SkillPage = () => {
     return (
         <section className="section-skills">

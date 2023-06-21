@@ -3,6 +3,10 @@ import { Quote } from "@/components/Quote";
 import Image from "next/image";
 import suffolk from "@/public/suffolk.png";
 
+export const metadata = {
+    title: "Profile",
+};
+
 const ProfilePage = () => {
     return (
         <section className="section-profile">
@@ -12,8 +16,8 @@ const ProfilePage = () => {
                 <h2>My Story</h2>
                 <article className="section-profile-about">
                     <Image
-                        height={60}
-                        width={60}
+                        height={150}
+                        width={150}
                         src="https://res.cloudinary.com/crimson-flamingo/image/upload/v1603662887/1104%20profile/me.png"
                         alt="hunter"
                         className="rounded-full"
@@ -29,11 +33,11 @@ const ProfilePage = () => {
                 </article>
                 <article className="section-profile-about">
                     <Image
-                        height="4em"
-                        width="4em"
-                        layout="responsive"
+                        height={150}
+                        width={150}
                         src={suffolk}
                         alt="suffolk"
+                        className="rounded-full"
                     />
                     <p>
                         I graduated Suffolk University in May 2019 located in

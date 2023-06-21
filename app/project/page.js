@@ -1,6 +1,10 @@
 import ProjectItemList from "@/components/ProjectItemList";
 import { Quote } from "@/components/Quote";
 
+export const metadata = {
+    title: "Project",
+};
+
 const ProjectPage = () => {
     return (
         <section className="section-projects">

@@ -39,9 +39,9 @@ export const webProjects = [
         url_image:
             "https://res.cloudinary.com/crimson-flamingo/image/upload/c_fill,g_auto,w_1000,h_1000/v1654140524/3105%20portfolio%20screenshots/mysite.png",
         description:
-            "This my personal website. It is a full stack site rewritten in 2022 to use Next.js (previously React) server side rendering for better SEO.",
+            "This my personal website. It is a full stack site rewritten in 2023 to use Next 13.js (previously Next12) server side rendering for better SEO.",
         // "This is a full stack website deployed on Heroku. The goal of this website is for me to write and share articles with you. I have created my own API: REST for user authentication, and SOCKET.io for live comments. I also have a master/admin page running on web sockets for me to publish, update, delete articles real time. All the data is stored on PostgreSQL.",
         technologiesUsed: "Next.js, SCSS, Google Analytics, Git",
-        gitHubLink: "https://github.com/BestVersion7/hunterkenfan",
+        gitHubLink: "https://github.com/BestVersion7/trainingnext13",
     },
 ];
