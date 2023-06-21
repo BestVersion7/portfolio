@@ -1,5 +1,3 @@
-'use client'
-
 import SkillItemList from "@/components/SkillItemList";
 import { Quote } from "@/components/Quote";
 

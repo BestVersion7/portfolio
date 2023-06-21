@@ -1,5 +1,3 @@
-'use client'
-
 import WorkExperienceItemList from "@/components/WorkExperienceItemList";
 import { Quote } from "@/components/Quote";
 import Image from "next/image";
