@@ -1,5 +1,3 @@
-'use client'
-
 import Profile from "./profile/page";
 import Skill from "./skill/page";
 import Project from "./project/page";

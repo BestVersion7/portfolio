@@ -1,3 +1,5 @@
+"use client";
+
 const Landing = () => {
     const handleScrollDown = () => {
         document.getElementById("section-profile-id").scrollIntoView();
