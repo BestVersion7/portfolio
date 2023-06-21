@@ -18,7 +18,7 @@ export const SkillItem = ({ name, starFill, starHalf, star }) => {
         <div className="section-skills-item-mapped">
             <span>{name} </span>
             <span className="section-skills-item-mapped-icon">
-                <div style={{color: 'darkorange'}}>
+                <div style={{ color: "darkorange" }}>
                     {starsFill}
                     {starsHalf}
                     {stars}
