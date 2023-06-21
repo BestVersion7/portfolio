@@ -12,8 +12,8 @@ const ProfilePage = () => {
                 <h2>My Story</h2>
                 <article className="section-profile-about">
                     <Image
-                        height="4em"
-                        width="4em"
+                        height={60}
+                        width={60}
                         src="https://res.cloudinary.com/crimson-flamingo/image/upload/v1603662887/1104%20profile/me.png"
                         alt="hunter"
                         className="rounded-full"

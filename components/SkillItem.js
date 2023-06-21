@@ -1,5 +1,4 @@
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
-import { IconContext } from "react-icons";
 import { string, number } from "prop-types";
 
 export const SkillItem = ({ name, starFill, starHalf, star }) => {
@@ -19,13 +18,11 @@ export const SkillItem = ({ name, starFill, starHalf, star }) => {
         <div className="section-skills-item-mapped">
             <span>{name} </span>
             <span className="section-skills-item-mapped-icon">
-                <IconContext.Provider
-                    value={{ size: "1em", color: "darkorange" }}
-                >
+                <div style={{color: 'darkorange'}}>
                     {starsFill}
                     {starsHalf}
                     {stars}
-                </IconContext.Provider>
+                </div>
             </span>
         </div>
     );

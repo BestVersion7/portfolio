@@ -11,8 +11,8 @@ const Footer = () => {
                 title="Github"
             >
                 <Image
-                    height="66%"
-                    width="66%"
+                    height={60}
+                    width={60}
                     // layout="responsive"
                     src="https://res.cloudinary.com/crimson-flamingo/image/upload/v1556071829/230419%20Icons/github.png"
                     alt="github"
@@ -25,8 +25,8 @@ const Footer = () => {
                 title="LinkedIn"
             >
                 <Image
-                    height="66%"
-                    width="66%"
+                    height={60}
+                    width={60}
                     // layout="fill"
                     src="https://res.cloudinary.com/crimson-flamingo/image/upload/v1603470384/230419%20Icons/logo-linkedin.png"
                     alt="linkedin"

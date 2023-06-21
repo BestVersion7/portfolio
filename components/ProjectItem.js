@@ -30,9 +30,8 @@ export const ProjectItem = (props) => {
             <Image
                 src={props.url_image}
                 alt={props.title}
-                width="100%"
-                height="100%"
-                layout="responsive"
+                width={500}
+                height={500}
             />
             <p>
                 <b>Technologies Used:</b> {props.technologiesUsed}
