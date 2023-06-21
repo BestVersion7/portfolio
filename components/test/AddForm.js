@@ -1,19 +1,39 @@
 "use client";
 
-// const handleForm = async (comment) => {
-//     const data2 = await fetch(
-//         `https://hunterkf.com/api/comment&API_KEY=${process.env.API_KEY}`,
-//         { headers: { "Content-Type": "application/json" } }
-//     );
-// };
+import { useRef } from "react";
+// import { useRouter } from "next/router";
+
+// const url2 = `https://hunterkf.com/api/comment?API_KEY=${process.env.API_KEY}`;
+
+async function postData(url = "", data = {}) {
+    const data2 = await fetch({
+        method: "POST",
+        mode: "cors",
+        headers: {
+            "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify({ comment_body: "fdsl" }),
+    });
+    const data3 = await data2.json();
+    return res.json(data3);
+}
 
 const AddForm = () => {
-    const handleSubmit = e => {
-        console.log('f')
-    }
+    const inputRef = useRef();
+
+    const handleSubmit = async (e) => {
+        await postData();
+    };
     return (
-        <form>
-            <textarea name="s" id="4" cols="30" rows="2"></textarea>
+        <form onSubmit={(e) => e.preventDefault()}>
+            <textarea
+                ref={inputRef}
+                name="s"
+                id="4"
+                cols="30"
+                rows="2"
+            ></textarea>
             <button onClick={handleSubmit} type="submit">
                 Submit
             </button>

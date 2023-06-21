@@ -1,12 +1,22 @@
 const getComments = async () => {
     const data2 = await fetch(
-        `https://hunterkf.com/api/comment&API_KEY=${process.env.API_KEY}`
+        `https://hunterkf.com/api/comment?API_KEY=${process.env.API_KEY}`,
+        { cache: "no-store" }
     );
     const data = await data2.json();
     return data;
 };
 
-export default function TestPage() {
-    console.log('data');
-    return <div>This is a test Page fetch</div>;
+import AddForm from "@/components/test/AddForm";
+
+export default async function TestPage() {
+    const sam = await getComments();
+    return (
+        <div>
+            <AddForm />
+            {sam.map((item, index) => (
+                <p key={index}>{item.comment_body}</p>
+            ))}
+        </div>
+    );
 }
