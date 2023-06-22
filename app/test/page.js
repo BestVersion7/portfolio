@@ -13,7 +13,7 @@ export default async function TestPage() {
     const sam = await getComments();
     return (
         <div>
-            <AddForm />
+            {/* <AddForm /> */}
             {sam.map((item, index) => (
                 <p key={index}>{item.comment_body}</p>
             ))}
