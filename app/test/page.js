@@ -1,7 +1,7 @@
 const getComments = async () => {
     const data2 = await fetch(
-        `https://hunterkf.com/api/comment?API_KEY=${process.env.API_KEY}`,
-        { cache: "no-store" }
+        `https://hunterkf.com/api/comment?API_KEY=${process.env.API_KEY}`
+        // { cache: "no-store" }
     );
     const data = await data2.json();
     return data;
