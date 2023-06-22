@@ -1,9 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
-    images: {
-        domains: ["res.cloudinary.com"],
-    },
     async headers() {
         return [
             {
@@ -23,6 +19,10 @@ const nextConfig = {
                 ],
             },
         ];
+    },
+    reactStrictMode: true,
+    images: {
+        domains: ["res.cloudinary.com"],
     },
 };
 

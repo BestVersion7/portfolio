@@ -66,24 +66,25 @@
 
 const url = "https://randomuser.me/api/";
 const url2 = "https://hunterkf.com/api/comment?API_KEY=";
+const url3 = "https://www.speedruntravel.com/api/comment?article_id=4";
 const options = {
     method: "GET",
     headers: {
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "*",
+        "Content-Type": "application/json",
     },
 };
-const getData = async () => {
-    const data2 = await fetch(
-        "url"
-    );
-    const data = await data2.json();
-    console.log(data);
-};
 
-const AddForm = () => {
-    const handleClick = () => {
-        getData();
+const AddForm = async () => {
+    const getData = async () => {
+        const data2 = await fetch(url2, { method: "GET" });
+        const data = await data2.json();
+        console.log(data);
+    };
+
+    // getData();
+    const handleClick = async () => {
+        await getData();
     };
     return (
         <div>
