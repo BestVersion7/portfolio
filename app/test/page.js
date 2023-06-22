@@ -14,7 +14,7 @@ export default async function TestPage() {
     // console.log(sam)
     return (
         <div>
-            {/* <AddForm /> */}
+            <AddForm />
             {/* {sam.map((item, index) => (
                 <p key={index}>{item.comment_body}</p>
             ))} */}
