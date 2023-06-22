@@ -1,7 +1,9 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(req) {
+    const origin = req.headers.get("origin");
+    console.log(origin);
     const data = await prisma.commenttb.findMany({
         select: {
             comment_body: true,
@@ -13,7 +15,7 @@ export async function GET() {
     });
     return new NextResponse(JSON.stringify(data), {
         headers: {
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": origin || "*",
             "Content-Type": "application/json",
         },
     });
