@@ -67,13 +67,16 @@
 const url = "https://randomuser.me/api/";
 const url2 = "https://hunterkf.com/api/comment?API_KEY=";
 const options = {
+    method: "GET",
     headers: {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers": "*",
     },
 };
 const getData = async () => {
-    const data2 = await fetch("url");
+    const data2 = await fetch(
+        "url"
+    );
     const data = await data2.json();
     console.log(data);
 };

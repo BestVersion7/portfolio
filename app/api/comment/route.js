@@ -11,12 +11,7 @@ export async function GET() {
         },
         take: 10,
     });
-    return new NextResponse(JSON.stringify(data), {
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-        },
-    });
+    return NextResponse.json(data);
 }
 
 export async function POST(req) {
@@ -30,11 +25,5 @@ export async function POST(req) {
         },
     });
 
-    return new NextResponse(JSON.stringify(data), {
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-        },
-        status: 201,
-    });
+    return NextResponse.json(data);
 }
