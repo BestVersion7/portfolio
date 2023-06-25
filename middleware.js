@@ -5,7 +5,9 @@ export async function middleware(req) {
     if (process.env.NODE_ENV !== "production") {
         return NextResponse.next();
     }
-    if (req.nextUrl.searchParams.get("API_KEY") !== process.env.API_KEY) {
+    // validate the headers with the api key
+    const xApiKey = req.headers.get("x-api-key");
+    if (xApiKey !== process.env.API_KEY) {
         return NextResponse.json("fail", { status: 401 });
     }
 
