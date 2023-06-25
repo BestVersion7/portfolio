@@ -35,3 +35,8 @@ yarn-error.log*
 next-env.d.ts
 
 .env
+
+test2
+
+app/test2/*
+components/test2/*
