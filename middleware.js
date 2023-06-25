@@ -6,9 +6,11 @@ export async function middleware(req) {
     //     return NextResponse.next();
     // }
     // validate the headers with the api key
-    const xApiKey = req.headers.get("x-api-key");
+    const xApiKey = req.headers.get("authorization");
+
     if (xApiKey !== process.env.API_KEY) {
-        return NextResponse.json("fail", { status: 401 });
+        // cannot do {status: 401}
+        return NextResponse.json({ message: "Unauthorized" });
     }
 
     return NextResponse.next();
