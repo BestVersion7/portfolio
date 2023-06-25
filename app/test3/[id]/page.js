@@ -1,5 +1,5 @@
 export async function generateStaticParams() {
-    const results = await fetch("https://www.hunterkf.com/api/article", {
+    const results = await fetch("/api/article", {
         next: { revalidate: 36000 },
         headers: {
             authorization: process.env.NEXT_PUBLIC_API_KEY,
@@ -13,15 +13,12 @@ export async function generateStaticParams() {
 }
 
 async function getArticleById(article_id) {
-    const results = await fetch(
-        `https://www.hunterkf.com/api/article?article_id=${article_id}`,
-        {
-            next: { revalidate: 36000 },
-            headers: {
-                authorization: process.env.NEXT_PUBLIC_API_KEY,
-            },
-        }
-    );
+    const results = await fetch(`/api/article?article_id=${article_id}`, {
+        next: { revalidate: 36000 },
+        headers: {
+            authorization: process.env.NEXT_PUBLIC_API_KEY,
+        },
+    });
     const data = await results.json();
     return data;
 }
