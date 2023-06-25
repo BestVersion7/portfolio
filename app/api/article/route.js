@@ -1,10 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
-export async function OPTIONS() {
-    return NextResponse.json("success", {status: 200});
-}
-
 export async function GET(req) {
     try {
         let data;
