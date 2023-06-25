@@ -4,12 +4,16 @@ import { NextResponse } from "next/server";
 export async function GET(req) {
     try {
         let data;
-        const article_id = req.nextUrl.searchParams.get("article_id");
+        const article_id = parseInt(req.nextUrl.searchParams.get("article_id"));
+
+        if (isNaN(article_id)) {
+            return NextResponse.json("nope", { status: 404 });
+        }
 
         if (article_id) {
             data = await prisma.blog.findUnique({
                 where: {
-                    article_id: parseInt(article_id),
+                    article_id,
                 },
             });
         } else {

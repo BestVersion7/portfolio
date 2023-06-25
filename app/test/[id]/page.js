@@ -1,5 +1,5 @@
 export async function generateStaticParams() {
-    return [{ pd: "1" }, { pd: "2" }];
+    return [{ id: "1" }, { id: "2" }];
 }
 
 const PD = ({ params }) => {
