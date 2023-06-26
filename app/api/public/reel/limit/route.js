@@ -6,8 +6,8 @@ export async function GET() {
         const data = await prisma.reel.findMany({
             where: {
                 reel_public: true,
-                take: 8,
             },
+            take: 8,
             orderBy: {
                 reel_date: "desc",
             },

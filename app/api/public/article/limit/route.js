@@ -6,8 +6,8 @@ export async function GET() {
         const data = await prisma.blog.findMany({
             where: {
                 article_public: true,
-                take: 10,
             },
+            take: 10,
             orderBy: {
                 article_date: "desc",
             },
