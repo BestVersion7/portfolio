@@ -55,3 +55,39 @@ export async function POST(req) {
         return NextResponse.json("Fail", { status: 500 });
     }
 }
+
+export async function PUT(req) {
+    try {
+        const article_id = req.nextUrl.searchParams.get("article_id");
+
+        if (isNaN(article_id)) {
+            return NextResponse.json(null, { status: 200 });
+        }
+
+        const {
+            article_date,
+            article_title,
+            article_post,
+            article_image,
+            article_image_small,
+            article_public,
+        } = req.body;
+
+        const data = await prisma.blog.update({
+            where: {
+                article_id: parseInt(article_id),
+            },
+            data: {
+                article_date,
+                article_title,
+                article_post,
+                article_image,
+                article_image_small,
+                article_public,
+            },
+        });
+        return NextResponse.json("updated", { status: 200 });
+    } catch (err) {
+        return NextResponse.json("Fail", { status: 500 });
+    }
+}
