@@ -13,9 +13,7 @@ export async function GET(req) {
                     reel_id: parseInt(reel_id),
                 },
             });
-        }
-
-        if (city) {
+        } else if (city) {
             data = await prisma.reel.findMany({
                 where: {
                     reel_category: city,
