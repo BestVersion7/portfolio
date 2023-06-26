@@ -5,6 +5,15 @@ export async function GET(req) {
     try {
         let data;
         const city = req.nextUrl.searchParams.get("city");
+        const reel_id = req.nextUrl.searchParams.get("reel_id");
+
+        if (reel_id) {
+            data = await prisma.reel.findUnique({
+                where: {
+                    reel_id: parseInt(reel_id),
+                },
+            });
+        }
 
         if (city) {
             data = await prisma.reel.findMany({
