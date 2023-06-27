@@ -37,7 +37,7 @@ export async function GET(req) {
         }
 
         // add blank data in beginning to switch index
-        if (index === 0) {
+        if (index == 0) {
             data.splice(0, 0, {
                 reel_image:
                     "https://res.cloudinary.com/crimson-flamingo/image/upload/v1556071041/230419%20Icons/instagram.png",
