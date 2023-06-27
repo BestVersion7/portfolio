@@ -32,30 +32,3 @@ export async function GET(req) {
         return NextResponse.json("Fail", { status: 500 });
     }
 }
-
-export async function POST(req) {
-    try {
-        const body = await req.json();
-        const {
-            article_date,
-            article_title,
-            article_post,
-            article_image,
-            article_image_small,
-            article_public,
-        } = body;
-        const data = await prisma.blog.create({
-            data: {
-                article_date,
-                article_title,
-                article_post,
-                article_image,
-                article_image_small,
-                article_public,
-            },
-        });
-        return NextResponse.json("Posted", { status: 201 });
-    } catch (err) {
-        return NextResponse.json("Fail", { status: 500 });
-    }
-}

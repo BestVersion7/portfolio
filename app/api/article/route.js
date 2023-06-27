@@ -36,7 +36,6 @@ export async function POST(req) {
             article_date,
             article_title,
             article_post,
-            article_image,
             article_image_small,
             article_public,
         } = body;
@@ -45,7 +44,6 @@ export async function POST(req) {
                 article_date,
                 article_title,
                 article_post,
-                article_image,
                 article_image_small,
                 article_public,
             },
@@ -64,14 +62,15 @@ export async function PUT(req) {
             return NextResponse.json(null, { status: 200 });
         }
 
+        const body = await req.json();
+
         const {
             article_date,
             article_title,
             article_post,
-            article_image,
             article_image_small,
             article_public,
-        } = req.body;
+        } = body;
 
         const data = await prisma.blog.update({
             where: {
@@ -81,7 +80,6 @@ export async function PUT(req) {
                 article_date,
                 article_title,
                 article_post,
-                article_image,
                 article_image_small,
                 article_public,
             },

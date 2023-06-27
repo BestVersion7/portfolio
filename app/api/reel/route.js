@@ -61,3 +61,39 @@ export async function POST(req) {
         return NextResponse.json("Fail", { status: 500 });
     }
 }
+
+export async function PUT(req) {
+    try {
+        const reel_id = req.nextUrl.searchParams.get("reel_id");
+
+        if (isNaN(reel_id)) {
+            return NextResponse.json(null, { status: 200 });
+        }
+
+        const body = await req.json();
+
+        const {
+            reel_date,
+            reel_image,
+            reel_category,
+            reel_public,
+            reel_video,
+            reel_video_thumbnail,
+        } = body;
+
+        const data = await prisma.blog.update({
+            where: { reel_id: parseInt(reel_id) },
+            data: {
+                reel_date,
+                reel_image,
+                reel_category,
+                reel_public,
+                reel_video,
+                reel_video_thumbnail,
+            },
+        });
+        return NextResponse.json("Posted", { status: 201 });
+    } catch (err) {
+        return NextResponse.json("Fail", { status: 500 });
+    }
+}
