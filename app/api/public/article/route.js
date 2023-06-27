@@ -11,7 +11,7 @@ export async function GET(req) {
         }
 
         if (article_id) {
-            data = await prisma.blog.findUnique({
+            data = await prisma.blog.findFirst({
                 where: {
                     article_id: parseInt(article_id),
                     article_public: true,
