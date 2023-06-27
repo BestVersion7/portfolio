@@ -9,7 +9,7 @@ export async function GET(req) {
             where: {
                 article_public: true,
             },
-            take: count,
+            take: parseInt(count),
             orderBy: {
                 article_date: "desc",
             },
