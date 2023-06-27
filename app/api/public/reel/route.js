@@ -10,7 +10,10 @@ export async function GET(req) {
             data = await prisma.reel.findMany({
                 where: {
                     reel_public: true,
-                    reel_category: city,
+                    reel_category: {
+                        equals: city,
+                        mode: "insensitive",
+                    },
                 },
                 orderBy: {
                     reel_date: "desc",
