@@ -1,13 +1,13 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(count) {
     try {
         const data = await prisma.blog.findMany({
             where: {
                 article_public: true,
             },
-            take: 10,
+            take: count,
             orderBy: {
                 article_date: "desc",
             },
