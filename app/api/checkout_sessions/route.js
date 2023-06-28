@@ -20,7 +20,7 @@ export async function GET(req) {
         //     },
         // ];
         console.log(session);
-        return NextResponse.json("data");
+        return NextResponse.json(session);
     } catch (err) {
         return NextResponse.json("fail", { status: 500 });
     }
@@ -47,8 +47,8 @@ export async function POST(req) {
                 },
             ],
             mode: "payment",
-            success_url: `${req.nextUrl.origin}/support/success?session_id={CHECKOUT_SESSION_ID}`,
-            cancel_url: `${req.nextUrl.origin}/support?session_id={CHECKOUT_SESSION_ID}`,
+            success_url: `https://www.speedruntravel.com/support/success?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `https://www.speedruntravel.com/support?session_id={CHECKOUT_SESSION_ID}`,
         };
 
         const checkoutSession = await stripe.checkout.sessions.create(params);
