@@ -23,17 +23,22 @@ export async function GET(req) {
 export async function POST(req) {
     const body = await req.json();
 
-    const { article_id, comment_body, comment_user_name, comment_user_image } =
-        body;
+    const { article_id, comment_body, comment_user_name } = body;
+    let { comment_user_image } = body;
 
-    const data = await prisma.commenttb.create({
+    if (comment_user_image == undefined) {
+        comment_user_image =
+            "https://res.cloudinary.com/crimson-flamingo/image/upload/v1556920165/030519%20drinks/drink-1556920166118.png";
+    }
+
+    await prisma.comment.create({
         data: {
-            article_id,
+            article_id: parseInt(article_id),
             comment_body,
             comment_user_name,
             comment_user_image,
         },
     });
 
-    return NextResponse.json(data, { status: 201 });
+    return NextResponse.json("created", { status: 201 });
 }
