@@ -8,19 +8,16 @@ export async function GET(req) {
             req.nextUrl.searchParams.get("session_id")
         );
 
-        // console.log(
-        //     `${session.currency} ${session.amount_total} ${session.customer_details}`
-        // );
-        // const data = [
-        //     {
-        //         currency: session.currency,
-        //         email: session.customer_details.email,
-        //         name: session.customer_details.name,
-        //         amount_total: session.amount_total,
-        //     },
-        // ];
-        console.log(session);
-        return NextResponse.json(session);
+        const data = [
+            {
+                currency: session.currency,
+                email: session.customer_details.email,
+                name: session.customer_details.name,
+                amount_total: session.amount_total,
+            },
+        ];
+
+        return NextResponse.json(data);
     } catch (err) {
         return NextResponse.json("fail", { status: 500 });
     }
