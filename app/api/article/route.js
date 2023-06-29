@@ -21,6 +21,9 @@ export async function GET(req) {
                 orderBy: {
                     article_date: "desc",
                 },
+                include: {
+                    comment: true
+                }
             });
         }
         return NextResponse.json(data);
