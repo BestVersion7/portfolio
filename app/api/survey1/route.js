@@ -31,8 +31,8 @@ export async function POST(req) {
             name: "survey1cookie",
             value: "true",
             sameSite: "none",
-            httpOnly: true,
-            secure: false,
+            // httpOnly: true,
+            secure: true,
             // 31 days
             maxAge: 60 * 60 * 24 * 31,
         });
