@@ -26,7 +26,14 @@ export async function POST(req) {
                 survey_choice,
             },
         });
-        return NextResponse.json(data, { status: 201 });
+        const response = NextResponse.json(data, { status: 201 });
+        response.cookies.set({
+            name: "survey1cookie",
+            value: "true",
+            // 31 days
+            maxAge: 60 * 60 * 24 * 31,
+        });
+        return response
     } catch (err) {
         return NextResponse.json("fail", { status: 500 });
     }
