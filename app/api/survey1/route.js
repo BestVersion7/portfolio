@@ -26,17 +26,7 @@ export async function POST(req) {
                 survey_choice,
             },
         });
-        const response = NextResponse.json(data, { status: 201 });
-        response.cookies.set({
-            name: "survey1cookie",
-            value: "true",
-            sameSite: false,
-            // httpOnly: true,
-            secure: true,
-            // 31 days
-            maxAge: 60 * 60 * 24 * 31,
-        });
-        return response;
+        return NextResponse.json(data, { status: 201 });
     } catch (err) {
         return NextResponse.json("fail", { status: 500 });
     }
