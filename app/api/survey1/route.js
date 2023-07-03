@@ -30,6 +30,7 @@ export async function POST(req) {
         response.cookies.set({
             name: "survey1cookie",
             value: "true",
+            sameSite: "none",
             // httpOnly: true,
             // secure: false,
             // 31 days
