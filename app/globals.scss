@@ -63,8 +63,11 @@ header {
     }
     .section-nav-links {
         font-size: 2em;
-        display: block;
-        text-align: center;
+        margin: 1em;
+
+        // this is original for navigation1
+        // display: block;
+        // text-align: center;
         line-height: 2em;
         color: rgb(137, 224, 137);
         border-top: 0.1px solid rgb(197, 245, 197);
@@ -78,13 +81,14 @@ header {
             color: rgb(79, 209, 137);
             background-color: lighten(rgb(53, 51, 44), 13);
         }
-        @include mQ(50em) {
-            display: inline-block;
-            width: 5em;
-            border-top: none;
-            border-bottom: none;
-            border-right: 0.1px solid rgb(197, 245, 197);
-        }
+        // this is original for navigation1
+        // @include mQ(50em) {
+        //     display: inline-block;
+        //     width: 5em;
+        //     border-top: none;
+        //     border-bottom: none;
+        //     border-right: 0.1px solid rgb(197, 245, 197);
+        // }
     }
 }
 
@@ -111,6 +115,8 @@ body {
     max-width: 100em;
     background-color: lightgray;
     // background-color: rgb(251, 251, 251);
+    display: grid;
+    grid-template-rows: 4em auto;
 
     .quote {
         text-align: center;
@@ -131,25 +137,21 @@ body {
     box-shadow: $boxShadow;
     .section-skills-item {
         display: grid;
-        // word-wrap: break-word;
-
+        grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
         margin: 0 1em;
         @include mQ(30em) {
-            grid-template-columns: repeat(2, 1fr);
-            column-gap: 5em;
-            margin: 0 3em;
+            // grid-template-columns: repeat(2, 1fr);
+            // column-gap: 5em;
+            // margin: 0 3em;
         }
         @include mQ(50em) {
-            grid-template-columns: repeat(3, 1fr);
-            column-gap: 10em;
-            margin: 0 5em;
+            // grid-template-columns: repeat(3, 1fr);
+            // column-gap: 10em;
+            // margin: 0 5em;
         }
         .section-skills-item-mapped {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            .section-skills-item-mapped-icon {
-                justify-self: right;
-            }
         }
     }
 }
@@ -218,7 +220,7 @@ body {
     box-shadow: $boxShadow;
     background-color: rgb(240, 255, 215);
     .section-projects-web {
-        // text-align: center;
+        text-align: center;
         margin: 0 1em;
         @include mQ(30em) {
             margin: 0 3em;
@@ -226,18 +228,47 @@ body {
             // grid-template-columns: repeat(2, 1fr);
             grid-gap: 1.5em;
         }
-        @include mQ(50em) {
-            margin: 0 5em;
-            grid-gap: 3em;
+        @include mQ(70em) {
+            // margin: 0 5em;
+            // grid-gap: 3em;
             grid-template-columns: repeat(2, 1fr);
         }
 
         .section-projects-web-items {
             // width: 100%;
+            border-radius: 3em;
+            box-shadow: 10px 5px;
+            background-color: aliceblue;
             border: 0.1em solid black;
-            @include mQ(30em) {
+            &:hover {
+                background-color: darken(aliceblue, 5%);
             }
         }
+    }
+}
+
+.project-container {
+    background-color: aliceblue;
+    .project-container-body {
+        word-break: break-word;
+        margin: 0 1.5em;
+        @include mQ(50em) {
+            margin: 0 3em;
+        }
+    }
+    h2 {
+        color: blue;
+    }
+    h3 {
+        color: darkcyan;
+    }
+
+    pre {
+        overflow: auto;
+        background-color: white;
+    }
+    b {
+        color: red;
     }
 }
 

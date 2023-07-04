@@ -30,8 +30,11 @@ export const ProjectItem = (props) => {
             <Image
                 src={props.url_image}
                 alt={props.title}
-                width={500}
-                height={500}
+                height={400}
+                width={400}
+                quality={100}
+                style={{ maxWidth: "85vw" }}
+                sizes="100vw, (min-width: 768px) 50vw"
             />
             <p>
                 <b>Technologies Used:</b> {props.technologiesUsed}
