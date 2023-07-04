@@ -120,7 +120,7 @@ export default function ProjectPage() {
                 <p>
                     The database I use to store the database is in AWS RDS
                     Postgres. I decided to use Postgres because SQL is easier to
-                    manipulate as the quantity of data increases. It's easier to
+                    manipulate as the quantity of data increases. {`It's`} easier to
                     make one change on a related table rather than make change
                     on every JSON object for MongoDB. I went with AWS because it
                     is the leader for Saas and I wanted to learn more about it,
