@@ -131,9 +131,9 @@ export default function ProjectPage() {
                     visual server (prisma studio) that I can use to see the
                     different tables and make edits. However, when I create a
                     table I would command line into the AWS RDS. For example
-                    <pre>{awsLine}</pre>
-                    <pre>{psqlLine}</pre>
                 </p>
+                <pre>{awsLine}</pre>
+                <pre>{psqlLine}</pre>
 
                 <h2>Tools:</h2>
                 <p>

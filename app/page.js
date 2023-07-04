@@ -3,12 +3,12 @@ import Skill from "./skill/page";
 import Landing from "@/components/Landing";
 import { Quote } from "@/components/Quote";
 import ProjectItemList from "@/components/ProjectItemList";
+const awsLine = `psql --host=xxx.comxxxx --port=5432 --username=postgres --password --dbname=xxx`;
 
 export default function Home() {
     return (
         <div>
-            <br />
-            <Landing />
+            <br /> <Landing />
             <br />
             <Profile /> <br />
             <Skill />
