@@ -1,4 +1,3 @@
-import { string } from "prop-types";
 import Image from "next/image";
 
 export const ProjectItem = (props) => {
@@ -33,7 +32,7 @@ export const ProjectItem = (props) => {
                 height={400}
                 width={400}
                 quality={100}
-                style={{ maxWidth: "85vw" }}
+                className="project-image"
                 sizes="100vw, (min-width: 768px) 50vw"
             />
             <p>
@@ -44,13 +43,4 @@ export const ProjectItem = (props) => {
             </p>
         </article>
     );
-};
-
-ProjectItem.propTypes = {
-    title: string.isRequired,
-    url_link: string.isRequired,
-    url_image: string.isRequired,
-    description: string.isRequired,
-    technologiesUsed: string.isRequired,
-    gitHubLink: string.isRequired,
 };

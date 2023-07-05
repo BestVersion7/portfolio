@@ -107,31 +107,31 @@ export default function ProjectPage() {
                     , you can see all my public and private articles and reels
                     and this content is not cached and run every time. On this
                     page, I am able to perform the basic CRUD operation. When
-                    clicking on the {`"create"`} or {`"update"`} buttons, it
-                    does not make an api call to {`"post`} or {`"put"`} because
-                    it is a public route and just for demo. Normally, I would
-                    have a middleware file to check for authentication for{" "}
-                    <b>/dashboard</b> but I wanted to share it so made it public
-                    and disabled the features. The articles are written using
-                    markdown format and the package react-markdown is helpful
-                    for that.
+                    clicking on the "create" or "update" buttons, it does not
+                    make an api call to "post" or "put" because it is a public
+                    route and just for demo. Normally, I would have a middleware
+                    file to check for authentication for <b>/dashboard</b> but I
+                    wanted to share it so made it public and disabled the
+                    features. The articles are written using markdown format and
+                    the package react-markdown is helpful for that.
                 </p>
                 <h2>Database And Storage</h2>
                 <p>
                     The database I use to store the database is in AWS RDS
                     Postgres. I decided to use Postgres because SQL is easier to
-                    manipulate as the quantity of data increases. {`It's`} easier to
-                    make one change on a related table rather than make change
-                    on every JSON object for MongoDB. I went with AWS because it
-                    is the leader for Saas and I wanted to learn more about it,
-                    not just RDS. They also have Docker, EC2 which I have
-                    previously used to deploy my API but I went with Vercel
-                    because it is expensive to use these features and not part
-                    of the free trial. I use prisma to make the integration to
-                    Postgres. It saves me time writing SQL code and has own
-                    visual server (prisma studio) that I can use to see the
-                    different tables and make edits. However, when I create a
-                    table I would command line into the AWS RDS. For example
+                    manipulate as the quantity of data increases. {`It's`}{" "}
+                    easier to make one change on a related table rather than
+                    make change on every JSON object for MongoDB. I went with
+                    AWS because it is the leader for Saas and I wanted to learn
+                    more about it, not just RDS. They also have Docker, EC2
+                    which I have previously used to deploy my API but I went
+                    with Vercel because it is expensive to use these features
+                    and not part of the free trial. I use prisma to make the
+                    integration to Postgres. It saves me time writing SQL code
+                    and has own visual server (prisma studio) that I can use to
+                    see the different tables and make edits. However, when I
+                    create a table I would command line into the AWS RDS. For
+                    example
                 </p>
                 <pre>{awsLine}</pre>
                 <pre>{psqlLine}</pre>

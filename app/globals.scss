@@ -16,16 +16,10 @@ $boxShadow: 0 1em 1em 0 gray;
 
 // navigation
 header {
-    // display: none;
     background-color: rgb(27, 20, 3);
-    position: -webkit-sticky;
     position: sticky;
     z-index: 2;
-    top: 0;
-    height: 4em;
-    @include mQ(50em) {
-        display: block;
-    }
+    // height: 4em;
     .navButton {
         height: 4em;
         width: 2.5em;
@@ -64,10 +58,6 @@ header {
     .section-nav-links {
         font-size: 2em;
         margin: 1em;
-
-        // this is original for navigation1
-        // display: block;
-        // text-align: center;
         line-height: 2em;
         color: rgb(137, 224, 137);
         border-top: 0.1px solid rgb(197, 245, 197);
@@ -81,14 +71,6 @@ header {
             color: rgb(79, 209, 137);
             background-color: lighten(rgb(53, 51, 44), 13);
         }
-        // this is original for navigation1
-        // @include mQ(50em) {
-        //     display: inline-block;
-        //     width: 5em;
-        //     border-top: none;
-        //     border-bottom: none;
-        //     border-right: 0.1px solid rgb(197, 245, 197);
-        // }
     }
 }
 
@@ -109,14 +91,14 @@ header {
 }
 
 body {
-    margin: 0;
+    // margin: 0;
     padding: 0;
     margin: auto;
     max-width: 100em;
     background-color: lightgray;
     // background-color: rgb(251, 251, 251);
     display: grid;
-    grid-template-rows: 4em auto;
+    grid-template-rows: 4em 1fr;
 
     .quote {
         text-align: center;
@@ -125,9 +107,6 @@ body {
     h2,
     h3 {
         text-align: center;
-    }
-    p {
-        // padding: 0 1em;
     }
 }
 
@@ -139,16 +118,7 @@ body {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
         margin: 0 1em;
-        @include mQ(30em) {
-            // grid-template-columns: repeat(2, 1fr);
-            // column-gap: 5em;
-            // margin: 0 3em;
-        }
-        @include mQ(50em) {
-            // grid-template-columns: repeat(3, 1fr);
-            // column-gap: 10em;
-            // margin: 0 5em;
-        }
+
         .section-skills-item-mapped {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -186,20 +156,20 @@ body {
     box-shadow: $boxShadow;
     background-image: url(https://res.cloudinary.com/crimson-flamingo/image/upload/v1560960995/3105%20portfolio%20screenshots/own_website_home.jpg);
     text-align: center;
+    position: relative;
     background-size: cover;
-    height: 30em;
-    max-height: 80vh;
-    min-height: -webkit-fill-available;
+    height: 75vh;
     @include mQ(30em) {
-        height: 45em;
+        height: 30em;
     }
     @include mQ(50em) {
-        height: 50em;
+        height: 35em;
     }
     .section-home-name {
         position: relative;
         top: 4em;
-        width: auto;
+        margin: auto;
+        width: 70%;
         background: yellow;
         border: solid black;
         box-shadow: 5px 10px;
@@ -222,16 +192,11 @@ body {
     .section-projects-web {
         text-align: center;
         margin: 0 1em;
-        @include mQ(30em) {
-            margin: 0 3em;
-            display: grid;
-            // grid-template-columns: repeat(2, 1fr);
-            grid-gap: 1.5em;
-        }
-        @include mQ(70em) {
-            // margin: 0 5em;
-            // grid-gap: 3em;
-            grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+        grid-gap: 3em;
+        @include mQ(50em) {
+            grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
         }
 
         .section-projects-web-items {
@@ -241,7 +206,11 @@ body {
             background-color: aliceblue;
             border: 0.1em solid black;
             &:hover {
+                cursor: pointer;
                 background-color: darken(aliceblue, 5%);
+            }
+            .project-image {
+                max-width: 90%;
             }
         }
     }
