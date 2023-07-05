@@ -107,8 +107,8 @@ export default function ProjectPage() {
                     , you can see all my public and private articles and reels
                     and this content is not cached and run every time. On this
                     page, I am able to perform the basic CRUD operation. When
-                    clicking on the "create" or "update" buttons, it does not
-                    make an api call to "post" or "put" because it is a public
+                    clicking on the {`"create"`} or {`"update"`} buttons, it does not
+                    make an api call to {`"post"`} or {`"put"`} because it is a public
                     route and just for demo. Normally, I would have a middleware
                     file to check for authentication for <b>/dashboard</b> but I
                     wanted to share it so made it public and disabled the
