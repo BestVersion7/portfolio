@@ -46,7 +46,7 @@ export async function POST(req) {
             reel_video,
             reel_video_thumbnail,
         } = body;
-        const data = await prisma.blog.create({
+        const data = await prisma.reel.create({
             data: {
                 reel_date,
                 reel_image,
