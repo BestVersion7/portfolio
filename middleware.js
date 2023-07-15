@@ -22,5 +22,6 @@ export const config = {
         "/api/reel/:path*",
         "/api/contact",
         "/api/subscriber",
+        "/api/test",
     ],
 };
