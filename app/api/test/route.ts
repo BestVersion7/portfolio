@@ -58,7 +58,7 @@ export async function PUT(req: NextRequest) {
                 comment_user_name,
             },
         });
-        return NextResponse.json(data);
+        return NextResponse.json('updated');
     } catch (err) {
         return NextResponse.json("fail", { status: 500 });
     }
