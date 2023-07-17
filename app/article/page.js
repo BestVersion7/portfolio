@@ -20,8 +20,9 @@ export default function ProjectPage() {
                 <p>
                     This is full-stack website built using Next 13 and deployed
                     on Vercel server. I have created my own API and also use
-                    external third party APIs. The database server I use to save
-                    and store my data is AWS RDS Postgres. Furthermore, there is
+                    external third party APIs. The codebase is written in
+                    Typescript {">"} 90%. The database server I use to save and
+                    store my data is AWS RDS Postgres. Furthermore, there is
                     Google Analytics tracking which is helpful for me to gauge
                     audience views.
                 </p>
@@ -107,13 +108,14 @@ export default function ProjectPage() {
                     , you can see all my public and private articles and reels
                     and this content is not cached and run every time. On this
                     page, I am able to perform the basic CRUD operation. When
-                    clicking on the {`"create"`} or {`"update"`} buttons, it does not
-                    make an api call to {`"post"`} or {`"put"`} because it is a public
-                    route and just for demo. Normally, I would have a middleware
-                    file to check for authentication for <b>/dashboard</b> but I
-                    wanted to share it so made it public and disabled the
-                    features. The articles are written using markdown format and
-                    the package react-markdown is helpful for that.
+                    clicking on the {`"create"`} or {`"update"`} buttons, it
+                    does not make an api call to {`"post"`} or {`"put"`} because
+                    it is a public route and just for demo. Normally, I would
+                    have a middleware file to check for authentication for{" "}
+                    <b>/dashboard</b> but I wanted to share it so made it public
+                    and disabled the features. The articles are written using
+                    markdown format and the package react-markdown is helpful
+                    for that.
                 </p>
                 <h2>Database And Storage</h2>
                 <p>

@@ -7,7 +7,7 @@ export const webProjects = [
         description:
             "The goal of this website is to share my travel adventures. It is a custom built CMS with an admin page that I can use to edit articles/photos. Users can post comments once signed in with Google. The article, user, comment data are stored to AWS RDS. For photo storage, I am using Cloudinary which caches photos for faster delivery. For newsletter subscription, I have incorporated SendGrid which automates the sending out emails. All the emails are sent out from info@speedruntravel.com which I created on Zoho mail. Furthermore, I created a support page and integrated Stripe to handle payments.",
         technologiesUsed:
-            "Nextjs, AWS RDS (Postgres), OAuth 2.0, Stripe, SendGrid, Zoho Mail, Google Analytics, Adsense, Cloudinary, Prisma, SCSS, Git",
+            "Typescript>90%, Nextjs, AWS RDS (Postgres), OAuth 2.0, Stripe, SendGrid, Zoho Mail, Google Analytics, Adsense, Cloudinary, Prisma, SCSS, Git",
         gitHubLink: "https://github.com/BestVersion7/speedruntravel",
     },
 
@@ -41,7 +41,8 @@ export const webProjects = [
         description:
             "This my personal website. It is a full stack site rewritten in 2023 to use Next 13.js (previously Next12) server side rendering for better SEO. It is also hosting an api that I use for my blog. The API gives access to my blog for performing CRUD operations for creating/updating articles, reels, comments, etc.",
         // "This is a full stack website deployed on Heroku. The goal of this website is for me to write and share articles with you. I have created my own API: REST for user authentication, and SOCKET.io for live comments. I also have a master/admin page running on web sockets for me to publish, update, delete articles real time. All the data is stored on PostgreSQL.",
-        technologiesUsed: "Next.js, SCSS, Google Analytics, Git",
+        technologiesUsed:
+            "Nextjs, Typescript<5%, AWS RDS (Postgres), OAuth 2.0, Cloudinary, Prisma, SCSS, Git",
         gitHubLink: "https://github.com/BestVersion7/trainingnext13",
     },
 ];

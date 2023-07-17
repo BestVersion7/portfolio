@@ -69,6 +69,12 @@ export const webDevelopmentSkills = [
         star: 1,
     },
     {
+        name: "Typescript",
+        starFill: 4,
+        starHalf: 0,
+        star: 1,
+    },
+    {
         name: "Node.js",
         starFill: 4,
         starHalf: 0,
