@@ -51,6 +51,13 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
+model booking {
+  booking_id    Int      @id @default(autoincrement())
+  booking_date  DateTime @default(now()) @db.Date
+  booking_name  String?  @db.VarChar(100)
+  booking_email String?  @db.VarChar(100)
+}
+
 model blog {
   article_id          Int       @id @default(autoincrement())
   article_date        DateTime? @default(now()) @db.Date
