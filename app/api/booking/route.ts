@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
         let data;
         const booking_date = req.nextUrl.searchParams.get("booking_date");
         if (booking_date !== null) {
-            data = await prisma.booking.findFirst({
+            data = await prisma.booking.findMany({
                 where: { booking_date },
             });
         } else {
