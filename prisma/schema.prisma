@@ -65,7 +65,7 @@ model blog {
 model booking {
   booking_id    Int      @id @default(autoincrement())
   booking_date  DateTime @default(now()) @db.Date
-  booking_time  String   @db.VarChar(50)
+  booking_time  Int      @db.SmallInt
   booking_name  String   @db.VarChar(50)
   booking_email String   @db.VarChar(100)
 }
