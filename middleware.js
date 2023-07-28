@@ -23,5 +23,6 @@ export const config = {
         "/api/contact",
         "/api/subscriber",
         "/api/test",
+        "/api/booking"
     ],
 };

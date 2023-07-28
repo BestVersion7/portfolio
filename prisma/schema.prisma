@@ -63,11 +63,13 @@ model blog {
 }
 
 model booking {
-  booking_id    Int      @id @default(autoincrement())
-  booking_date  DateTime @default(now()) @db.Date
-  booking_time  Int      @db.SmallInt
-  booking_name  String   @db.VarChar(50)
-  booking_email String   @db.VarChar(100)
+  booking_id   Int      @id @default(autoincrement())
+  booking_date DateTime @db.Timestamptz(6)
+  booking_time Int?     @db.SmallInt
+  doctor_id    Int
+  patient_id   Int
+  doctor       doctor   @relation(fields: [doctor_id], references: [doctor_id], onDelete: NoAction, onUpdate: NoAction)
+  patient      patient  @relation(fields: [patient_id], references: [patient_id], onDelete: NoAction, onUpdate: NoAction)
 }
 
 model comment {
@@ -139,4 +141,24 @@ model usertb {
   gender     String?  @db.VarChar(1)
   lastmod    DateTime @default(now()) @db.Timestamptz(6)
   first_name String?
+}
+
+model doctor {
+  doctor_id          Int       @id @default(autoincrement())
+  doctor_first_name  String?   @db.VarChar(30)
+  doctor_last_name   String?   @db.VarChar(30)
+  doctor_email       String    @db.VarChar(100)
+  doctor_description String?   @db.VarChar(10000)
+  doctor_image       String?   @db.VarChar(500)
+  doctor_phone       Int?
+  booking            booking[]
+}
+
+model patient {
+  patient_id         Int       @id @default(autoincrement())
+  patient_first_name String?   @db.VarChar(30)
+  patient_last_name  String?   @db.VarChar(30)
+  patient_email      String    @db.VarChar(100)
+  patient_phone      Int?
+  booking            booking[]
 }
