@@ -23,6 +23,7 @@ export const config = {
         "/api/contact",
         "/api/subscriber",
         "/api/test",
-        "/api/booking"
+        "/api/booking",
+        "/api/booking/patient",
     ],
 };

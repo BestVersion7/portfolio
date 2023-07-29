@@ -3,23 +3,16 @@ import { prisma } from "@/lib/prisma";
 
 export async function GET(req: NextRequest) {
     try {
-        const booking_date = req.nextUrl.searchParams.get("booking_date");
-        const doctor_id = Number(req.nextUrl.searchParams.get("doctor_id"));
+        const patient_id = Number(req.nextUrl.searchParams.get("patient_id"));
         let data;
-        if (booking_date && doctor_id) {
-            data = await prisma.booking.findMany({
+        if (patient_id) {
+            data = await prisma.patient.findUnique({
                 where: {
-                    booking_date,
-                    doctor_id,
+                    patient_id,
                 },
             });
         } else {
-            data = await prisma.booking.findMany({
-                include: {
-                    patient: true,
-                    doctor: true,
-                },
-            });
+            data = await prisma.patient.findMany({});
         }
         return NextResponse.json(data);
     } catch (error) {
@@ -30,7 +23,7 @@ export async function GET(req: NextRequest) {
 export async function POST(req: Request) {
     const body = await req.json();
     try {
-        await prisma.booking.create({
+        await prisma.patient.create({
             data: body,
         });
         return NextResponse.json("created", { status: 201 });
