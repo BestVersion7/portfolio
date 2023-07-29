@@ -12,9 +12,18 @@ export async function GET(req: NextRequest) {
                     booking_date,
                     doctor_id,
                 },
+                orderBy: {
+                    booking_time: "desc",
+                },
             });
         } else {
             data = await prisma.booking.findMany({
+                orderBy: [
+                    {
+                        booking_date: "desc",
+                    },
+                    { booking_time: "desc" },
+                ],
                 include: {
                     patient: true,
                     doctor: true,
