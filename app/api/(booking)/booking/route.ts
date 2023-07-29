@@ -1,14 +1,24 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
     try {
-        const data = await prisma.booking.findMany({
-            include: {
-                doctor: true,
-                patient: true,
-            },
-        });
+        const booking_date = req.nextUrl.searchParams.get("booking_date");
+        let data;
+        if (booking_date) {
+            data = await prisma.booking.findMany({
+                where: {
+                    booking_date,
+                },
+            });
+        } else {
+            data = await prisma.booking.findMany({
+                include: {
+                    patient: true,
+                    doctor: true,
+                },
+            });
+        }
         return NextResponse.json(data);
     } catch (error) {
         return NextResponse.json("error", { status: 500 });
