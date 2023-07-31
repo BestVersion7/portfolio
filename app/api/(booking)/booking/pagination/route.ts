@@ -31,9 +31,12 @@ export async function GET(req: NextRequest) {
                 where: {
                     doctor_id,
                 },
-                orderBy: {
-                    booking_time: "desc",
-                },
+                orderBy: [
+                    {
+                        booking_date: "desc",
+                    },
+                    { booking_time: "desc" },
+                ],
                 include: {
                     patient: true,
                     doctor: true,
