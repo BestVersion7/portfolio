@@ -5,11 +5,12 @@ export async function GET(req: NextRequest) {
     try {
         const booking_date = req.nextUrl.searchParams.get("booking_date");
         const doctor_id = Number(req.nextUrl.searchParams.get("doctor_id"));
+        const take = 20;
+        const pagination = Number(req.nextUrl.searchParams.get("page"));
 
         let data;
-        let count;
 
-        if (booking_date && doctor_id) {
+        if (booking_date && doctor_id && pagination) {
             data = await prisma.booking.findMany({
                 where: {
                     booking_date,
@@ -22,15 +23,10 @@ export async function GET(req: NextRequest) {
                     patient: true,
                     doctor: true,
                 },
+                take,
+                skip: take * (pagination - 1),
             });
-            count = await prisma.booking.aggregate({
-                where: {
-                    booking_date,
-                    doctor_id,
-                },
-                _count: true,
-            });
-        } else if (doctor_id) {
+        } else if (doctor_id && pagination) {
             data = await prisma.booking.findMany({
                 where: {
                     doctor_id,
@@ -42,14 +38,10 @@ export async function GET(req: NextRequest) {
                     patient: true,
                     doctor: true,
                 },
+                take,
+                skip: take * (pagination - 1),
             });
-            count = await prisma.booking.aggregate({
-                where: {
-                    doctor_id,
-                },
-                _count: true,
-            });
-        } else if (booking_date) {
+        } else if (booking_date && pagination) {
             data = await prisma.booking.findMany({
                 where: {
                     booking_date,
@@ -61,12 +53,8 @@ export async function GET(req: NextRequest) {
                     patient: true,
                     doctor: true,
                 },
-            });
-            count = await prisma.booking.aggregate({
-                where: {
-                    booking_date,
-                },
-                _count: true,
+                take,
+                skip: take * (pagination - 1),
             });
         } else {
             data = await prisma.booking.findMany({
@@ -76,16 +64,17 @@ export async function GET(req: NextRequest) {
                     },
                     { booking_time: "desc" },
                 ],
+
                 include: {
                     patient: true,
                     doctor: true,
                 },
-            });
-            count = await prisma.booking.aggregate({
-                _count: true,
+                take,
+                skip: take * (pagination - 1),
             });
         }
-        return NextResponse.json({ _count: count._count, results: data });
+
+        return NextResponse.json(data);
     } catch (error) {
         return NextResponse.json("error", { status: 500 });
     }
