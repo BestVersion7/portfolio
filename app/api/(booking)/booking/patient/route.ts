@@ -22,9 +22,16 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: Request) {
     const body = await req.json();
+    const { patient_id, patient_first_name, patient_last_name, patient_email } =
+        body;
     try {
         const data = await prisma.patient.create({
-            data: body,
+            data: {
+                patient_id,
+                patient_first_name,
+                patient_last_name,
+                patient_email,
+            },
         });
         return NextResponse.json(data.patient_id, { status: 201 });
     } catch (error) {
