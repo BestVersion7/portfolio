@@ -23,10 +23,10 @@ export async function GET(req: NextRequest) {
 export async function POST(req: Request) {
     const body = await req.json();
     try {
-        await prisma.patient.create({
+        const data = await prisma.patient.create({
             data: body,
         });
-        return NextResponse.json("created", { status: 201 });
+        return NextResponse.json(data.patient_id, { status: 201 });
     } catch (error) {
         return NextResponse.json("error", { status: 500 });
     }
