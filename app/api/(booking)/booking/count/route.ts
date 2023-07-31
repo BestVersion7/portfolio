@@ -6,63 +6,36 @@ export async function GET(req: NextRequest) {
         const booking_date = req.nextUrl.searchParams.get("booking_date");
         const doctor_id = Number(req.nextUrl.searchParams.get("doctor_id"));
 
-        let data;
+        let count;
 
         if (booking_date && doctor_id) {
-            data = await prisma.booking.findMany({
+            count = await prisma.booking.aggregate({
                 where: {
                     booking_date,
                     doctor_id,
                 },
-                orderBy: {
-                    booking_time: "desc",
-                },
-                include: {
-                    patient: true,
-                    doctor: true,
-                },
+                _count: true,
             });
         } else if (doctor_id) {
-            data = await prisma.booking.findMany({
+            count = await prisma.booking.aggregate({
                 where: {
                     doctor_id,
                 },
-                orderBy: {
-                    booking_time: "desc",
-                },
-                include: {
-                    patient: true,
-                    doctor: true,
-                },
+                _count: true,
             });
         } else if (booking_date) {
-            data = await prisma.booking.findMany({
+            count = await prisma.booking.aggregate({
                 where: {
                     booking_date,
                 },
-                orderBy: {
-                    booking_time: "desc",
-                },
-                include: {
-                    patient: true,
-                    doctor: true,
-                },
+                _count: true,
             });
         } else {
-            data = await prisma.booking.findMany({
-                orderBy: [
-                    {
-                        booking_date: "desc",
-                    },
-                    { booking_time: "desc" },
-                ],
-                include: {
-                    patient: true,
-                    doctor: true,
-                },
+            count = await prisma.booking.aggregate({
+                _count: true,
             });
         }
-        return NextResponse.json(data);
+        return NextResponse.json({ _count: count._count });
     } catch (error) {
         return NextResponse.json("error", { status: 500 });
     }
