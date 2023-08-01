@@ -69,10 +69,8 @@ export async function GET(req: NextRequest) {
 export async function POST(req: Request) {
     const body = await req.json();
     try {
-        await prisma.booking.create({
-            data: body,
-        });
-        return NextResponse.json(body.booking_id, { status: 201 });
+        const createData = await prisma.booking.create({ data: body });
+        return NextResponse.json(createData, { status: 201 });
     } catch (error) {
         return NextResponse.json("error", { status: 500 });
     }
