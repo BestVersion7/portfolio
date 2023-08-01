@@ -5,6 +5,7 @@ export async function GET(req: NextRequest) {
     try {
         const booking_date = req.nextUrl.searchParams.get("booking_date");
         const doctor_id = Number(req.nextUrl.searchParams.get("doctor_id"));
+        const booking_id = Number(req.nextUrl.searchParams.get("booking_id"));
 
         let data;
 
@@ -48,14 +49,11 @@ export async function GET(req: NextRequest) {
                     doctor: true,
                 },
             });
-        } else {
+        } else if (booking_id) {
             data = await prisma.booking.findMany({
-                orderBy: [
-                    {
-                        booking_date: "desc",
-                    },
-                    { booking_time: "desc" },
-                ],
+                where: {
+                    booking_id,
+                },
                 include: {
                     patient: true,
                     doctor: true,
@@ -74,7 +72,7 @@ export async function POST(req: Request) {
         await prisma.booking.create({
             data: body,
         });
-        return NextResponse.json("created", { status: 201 });
+        return NextResponse.json(body.booking_id, { status: 201 });
     } catch (error) {
         return NextResponse.json("error", { status: 500 });
     }
