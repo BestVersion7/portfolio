@@ -1,5 +1,17 @@
 export const webProjects = [
     {
+        title: "Doctor Booking Website",
+        url_link: "https://cooperpricehealth.vercel.app/",
+        url_image:
+            "https://res.cloudinary.com/crimson-flamingo/image/upload/c_fill,g_auto,w_1000,h_1000/v1690916823/3105%20portfolio%20screenshots/cooper.png",
+        description:
+            "The goal of this website is to inform users about mental health and allow them to book an appointment with a therapist. It is a full stack website that allows users to book an appointment with a therapist. I added a default test account to use to book the appointment. Once a date and time is booked, the availability on the calendar updates and is no longer available. I am using react-calendar to make the view easier and all the data is stored on RDS. The api is stored on this domain /api/booking. Lastly, I used Bootstrap for styling the buttons.",
+        technologiesUsed:
+            "Typescript>90%, Nextjs, AWS RDS (Postgres), OAuth 2.0, Stripe, SendGrid, Zoho Mail, Cloudinary, Bootstrap, SCSS, Git",
+        gitHubLink: "https://github.com/BestVersion7/cooperpricehealth",
+    },
+
+    {
         title: "Travel Blog",
         url_link: "https://speedruntravel.com",
         url_image:
@@ -7,7 +19,7 @@ export const webProjects = [
         description:
             "The goal of this website is to share my travel adventures. It is a custom built CMS with an admin page that I can use to edit articles/photos. Users can post comments once signed in with Google. The article, user, comment data are stored to AWS RDS. For photo storage, I am using Cloudinary which caches photos for faster delivery. For newsletter subscription, I have incorporated SendGrid which automates the sending out emails. All the emails are sent out from info@speedruntravel.com which I created on Zoho mail. Furthermore, I created a support page and integrated Stripe to handle payments.",
         technologiesUsed:
-            "Typescript>90%, Nextjs, AWS RDS (Postgres), OAuth 2.0, Stripe, SendGrid, Zoho Mail, Google Analytics, Adsense, Cloudinary, Prisma, SCSS, Git",
+            "Typescript>90%, Nextjs, AWS RDS (Postgres), OAuth 2.0, Stripe, SendGrid, Zoho Mail, Google Analytics, Adsense, Cloudinary, Prisma, Material UI, SCSS, Git",
         gitHubLink: "https://github.com/BestVersion7/speedruntravel",
     },
 

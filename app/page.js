@@ -15,7 +15,7 @@ export default function Home() {
                         <h2>Welcome to my site! </h2>
                     </div>
                     <button className="icon-down">
-                        <i>See More</i>
+                        <i>Scroll down</i>
                     </button>
                 </div>
             </section>
@@ -68,7 +68,6 @@ export default function Home() {
                     <WorkExperienceItemList />
                 </section>
             </section>
-            <br />
             <section className="section-skills">
                 <br /> <h2>Skills and Abilities</h2>
                 <Quote
@@ -80,7 +79,6 @@ export default function Home() {
                 <br />
                 <br />
             </section>
-            <br />
             <section className="section-projects">
                 <br /> <h2>Passion Projects: </h2>
                 <Quote
