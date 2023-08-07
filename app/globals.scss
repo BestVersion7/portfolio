@@ -221,7 +221,9 @@ body {
                 background-color: darken(aliceblue, 5%);
             }
             .project-image {
-                max-width: 90%;
+                width: 90%;
+                // height: 500px;
+                // object-fit: contain;
             }
         }
     }

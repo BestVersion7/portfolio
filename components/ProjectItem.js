@@ -26,15 +26,10 @@ export const ProjectItem = (props) => {
                     {props.gitHubLink}
                 </a>
             </p>
-            <Image
-                src={props.url_image}
-                alt={props.title}
-                height={400}
-                width={400}
-                quality={100}
-                className="project-image"
-                sizes="100vw, (min-width: 768px) 50vw"
-            />
+            <video controls muted autoPlay className="project-image">
+                <source type="video/mp4" src={props.url_image} /> Your browser
+                does not support playing this video
+            </video>
             <p>
                 <b>Technologies Used:</b> {props.technologiesUsed}
             </p>
