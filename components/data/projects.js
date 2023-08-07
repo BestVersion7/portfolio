@@ -51,7 +51,7 @@ export const webProjects = [
         url_image:
             "https://res.cloudinary.com/crimson-flamingo/video/upload/v1691376467/3105%20portfolio%20screenshots/My_Website_-_Personal_-_Microsoft_Edge_2023-08-06_22-32-04.mp4",
         description:
-            "This my personal website. It is a full stack site rewritten in 2023 to use Next 13.js (previously Next12) server side rendering for better SEO. It is also hosting an api that I use for my blog. The API gives access to my blog for performing CRUD operations for creating/updating articles, reels, comments, etc.",
+            "This is my personal website. It is a full stack site rewritten in 2023 to use Next 13.js (previously Next12) server side rendering for better SEO. It is also hosting all the api route that I use for my other projects including the booking app and my blog. All the API logic is centralized here and it is easier for me to maintain and separate front end and back end logic. It includes all the CRUD routes and application middleware for creating/updating articles, reels, comments, etc.",
         // "This is a full stack website deployed on Heroku. The goal of this website is for me to write and share articles with you. I have created my own API: REST for user authentication, and SOCKET.io for live comments. I also have a master/admin page running on web sockets for me to publish, update, delete articles real time. All the data is stored on PostgreSQL.",
         technologiesUsed:
             "Nextjs, Typescript<5%, AWS RDS (Postgres), OAuth 2.0, Cloudinary, Prisma, SCSS, Git",
