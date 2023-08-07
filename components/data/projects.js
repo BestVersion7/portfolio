@@ -15,7 +15,7 @@ export const webProjects = [
         title: "Travel Blog",
         url_link: "https://speedruntravel.com",
         url_image:
-            "https://res.cloudinary.com/crimson-flamingo/image/upload/c_fill,g_auto,w_1000,h_1000/v1654139992/3105%20portfolio%20screenshots/speedtravel.png",
+            "https://res.cloudinary.com/crimson-flamingo/image/upload/v1691374329/3105%20portfolio%20screenshots/speedtravel2.png",
         description:
             "The goal of this website is to share my travel adventures. It is a custom built CMS with an admin page that I can use to edit articles/photos. Users can post comments once signed in with Google. The article, user, comment data are stored to AWS RDS. For photo storage, I am using Cloudinary which caches photos for faster delivery. For newsletter subscription, I have incorporated SendGrid which automates the sending out emails. All the emails are sent out from info@speedruntravel.com which I created on Zoho mail. Furthermore, I created a support page and integrated Stripe to handle payments.",
         technologiesUsed:
