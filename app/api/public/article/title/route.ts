@@ -4,6 +4,9 @@ import { prisma } from "@/lib/prisma";
 
 export async function GET(req: NextRequest) {
     const title = req.nextUrl.searchParams.get("article_title");
+    if(title==="") {
+        return NextResponse.json([])
+    }
     try {
         const result = await prisma.blog.findMany({
             where: {
