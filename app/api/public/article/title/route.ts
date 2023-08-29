@@ -16,7 +16,8 @@ export async function GET(req: NextRequest) {
                 },
             },
             select: {
-                article_title: true
+                article_title: true,
+                article_id: true
             }
         });
         return NextResponse.json(result);
