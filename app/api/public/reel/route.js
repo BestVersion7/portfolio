@@ -6,6 +6,7 @@ export async function GET(req) {
         let data;
         const city = req.nextUrl.searchParams.get("city");
 
+        // remove capitalisation
         if (city) {
             data = await prisma.reel.findMany({
                 where: {
