@@ -1,6 +1,13 @@
-import Image from "next/image";
+type IProject = {
+    title: string
+    url_link: string
+    gitHubLink: string
+    url_image: string
+    technologiesUsed: string
+    description: string
+}
 
-export const ProjectItem = (props) => {
+export const ProjectItem = (props: IProject) => {
     return (
         <article className="section-projects-web-items">
             <h2>{props.title}</h2>

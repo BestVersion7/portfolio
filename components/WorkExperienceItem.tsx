@@ -1,6 +1,12 @@
-import { string } from "prop-types";
+type IWorkExperience = {
+    company: string,
+    position: string,
+    summary: string,
+    date: string
+}
 
-export const WorkExperienceItem = ({ company, position, summary, date }) => {
+export const WorkExperienceItem = (workExperience: IWorkExperience) => {
+    const { company, position, summary, date } = workExperience
     return (
         <div className="section-work-container-items">
             <div>
@@ -13,11 +19,4 @@ export const WorkExperienceItem = ({ company, position, summary, date }) => {
             <br />
         </div>
     );
-};
-
-WorkExperienceItem.propTypes = {
-    company: string.isRequired,
-    date: string.isRequired,
-    position: string.isRequired,
-    summary: string.isRequired,
 };

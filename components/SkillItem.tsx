@@ -1,7 +1,14 @@
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
-import { string, number } from "prop-types";
 
-export const SkillItem = ({ name, starFill, starHalf, star }) => {
+export type ISkill = {
+    skillName: string,
+    starFill: number,
+    starHalf: number,
+    star: number
+}
+
+export const SkillItem = (skill: ISkill) => {
+    const { skillName, starFill, starHalf, star } = skill
     const starsFill = [];
     const starsHalf = [];
     const stars = [];
@@ -16,7 +23,7 @@ export const SkillItem = ({ name, starFill, starHalf, star }) => {
     }
     return (
         <div className="section-skills-item-mapped">
-            <span>{name} </span>
+            <span>{skillName} </span>
             <span>
                 <div style={{ color: "darkorange" }}>
                     {starsFill}
@@ -26,11 +33,4 @@ export const SkillItem = ({ name, starFill, starHalf, star }) => {
             </span>
         </div>
     );
-};
-
-SkillItem.propTypes = {
-    name: string.isRequired,
-    starFill: number.isRequired,
-    starHalf: number.isRequired,
-    star: number.isRequired,
 };

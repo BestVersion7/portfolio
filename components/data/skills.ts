@@ -1,54 +1,54 @@
 export const businessSkills = [
     {
-        name: "Microsoft Excel",
+        skillName: "Microsoft Excel",
         starFill: 5,
         starHalf: 0,
         star: 0,
     },
     // {
-    //     name: "Microsoft Access",
+    //     skillName: "Microsoft Access",
     //     starFill: 4,
     //     starHalf: 0,
     //     star: 1,
     // },
     {
-        name: "Microsoft VBA",
+        skillName: "Microsoft VBA",
         starFill: 3,
         starHalf: 1,
         star: 1,
     },
     // {
-    //     name: "Google Analytics",
+    //     skillName: "Google Analytics",
     //     starFill: 4,
     //     starHalf: 1,
     //     star: 0,
     // },
     // {
-    //     name: "Salesforce",
+    //     skillName: "Salesforce",
     //     starFill: 3,
     //     starHalf: 1,
     //     star: 1,
     // },
     // {
-    //     name: "Oracle",
+    //     skillName: "Oracle",
     //     starFill: 4,
     //     starHalf: 0,
     //     star: 1,
     // },
     // {
-    //     name: "Quickbooks Online",
+    //     skillName: "Quickbooks Online",
     //     starFill: 4,
     //     starHalf: 0,
     //     star: 1,
     // },
     // {
-    //     name: "Tableau",
+    //     skillName: "Tableau",
     //     starFill: 3,
     //     starHalf: 1,
     //     star: 1,
     // },
     // {
-    //     name: "3Elite",
+    //     skillName: "3Elite",
     //     starFill: 4,
     //     starHalf: 0,
     //     star: 1
@@ -57,62 +57,62 @@ export const businessSkills = [
 
 export const webDevelopmentSkills = [
     {
-        name: "Next.js",
+        skillName: "Next.js",
         starFill: 4,
         starHalf: 1,
         star: 0,
     },
     {
-        name: "React.js",
+        skillName: "React.js",
         starFill: 4,
         starHalf: 0,
         star: 1,
     },
     {
-        name: "Typescript",
+        skillName: "Typescript",
         starFill: 4,
         starHalf: 0,
         star: 1,
     },
     {
-        name: "Node.js",
+        skillName: "Node.js",
         starFill: 4,
         starHalf: 0,
         star: 1,
     },
     {
-        name: "Express.js",
+        skillName: "Express.js",
         starFill: 4,
         starHalf: 1,
         star: 0,
     },
     {
-        name: "SQL (Postgres)",
+        skillName: "SQL (Postgres)",
         starFill: 4,
         starHalf: 0,
         star: 1,
     },
     {
-        name: "NoSQL (MongoDB)",
+        skillName: "NoSQL (MongoDB)",
         starFill: 4,
         starHalf: 1,
         star: 0,
     },
     {
-        name: "HTML5",
+        skillName: "HTML5",
         starFill: 4,
         starHalf: 0,
         star: 1,
     },
     {
-        name: "CSS3, SASS",
+        skillName: "CSS3, SASS",
         starFill: 4,
         starHalf: 0,
         star: 1,
     },
 
     {
-        name: "UI/UX Testing",
+        skillName: "UI/UX Testing",
         starFill: 3,
         starHalf: 0,
         star: 2,
@@ -121,80 +121,89 @@ export const webDevelopmentSkills = [
 
 export const thirdParties = [
     {
-        name: "OAuth 2.0",
+        skillName: "OAuth 2.0",
         starFill: 4,
         starHalf: 1,
         star: 0,
     },
     {
-        name: "Google Console",
+        skillName: "Google Console",
         starFill: 4,
         starHalf: 1,
         star: 0,
     },
 
     {
-        name: "Stripe",
+        skillName: "Stripe",
         starFill: 4,
         starHalf: 1,
         star: 0,
     },
     {
-        name: "SendGrid",
+        skillName: "SendGrid",
         starFill: 4,
         starHalf: 1,
         star: 0,
     },
     {
-        name: "Cloudinary",
+        skillName: "Cloudinary",
         starFill: 4,
         starHalf: 1,
         star: 0,
     },
     {
-        name: "Prisma",
+        skillName: "Prisma",
         starFill: 4,
         starHalf: 1,
         star: 0,
     },
     {
-        name: "AWS RDS",
+        skillName: "AWS RDS",
         starFill: 4,
         starHalf: 0,
         star: 1,
     },
-];
+]
+export const creativeSkills = [
 
+    {
+        skillName: "Adobe Photoshop",
+        starFill: 4,
+        starHalf: 0,
+        star: 1,
+    },
+    {
+        skillName: "Adobe Premiere Pro",
+        starFill: 4,
+        starHalf: 0,
+        star: 1,
+    },
+    {
+        skillName: "Adobe After Effects",
+        starFill: 3,
+        starHalf: 0,
+        star: 2,
+    },
+
+]
 export const toolSkills = [
     {
-        name: "GIT",
+        skillName: "GIT",
         starFill: 4,
         starHalf: 1,
         star: 0,
     },
     {
-        name: "VSCode",
+        skillName: "VSCode",
         starFill: 4,
         starHalf: 1,
         star: 0,
     },
     {
-        name: "Postman (Thunder Client)",
+        skillName: "Postman (Thunder Client)",
         starFill: 4,
         starHalf: 1,
         star: 0,
     },
 
-    // {
-    //     name: "Adobe Photoshop",
-    //     starFill: 4,
-    //     starHalf: 1,
-    //     star: 0,
-    // },
-    // {
-    //     name: "Adobe Premiere Pro",
-    //     starFill: 3,
-    //     starHalf: 1,
-    //     star: 1,
-    // },
 ];

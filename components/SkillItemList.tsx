@@ -1,6 +1,7 @@
 import {
     toolSkills,
     thirdParties,
+    creativeSkills,
     webDevelopmentSkills,
     businessSkills,
 } from "./data/skills";
@@ -11,11 +12,11 @@ const SkillPage = () => {
         <>
             <h3>Business Skills</h3>
             <div className="section-skills-item">
-                {businessSkills.map(({ name, star, starFill, starHalf }, i) => {
+                {businessSkills.map(({ skillName, star, starFill, starHalf }, i) => {
                     return (
                         <SkillItem
                             key={i}
-                            name={name}
+                            skillName={skillName}
                             starFill={starFill}
                             starHalf={starHalf}
                             star={star}
@@ -27,11 +28,11 @@ const SkillPage = () => {
             <h3>Full-Stack Web Development</h3>
             <div className="section-skills-item">
                 {webDevelopmentSkills.map(
-                    ({ name, star, starFill, starHalf }, i) => {
+                    ({ skillName, star, starFill, starHalf }, i) => {
                         return (
                             <SkillItem
                                 key={i}
-                                name={name}
+                                skillName={skillName}
                                 starFill={starFill}
                                 starHalf={starHalf}
                                 star={star}
@@ -42,11 +43,25 @@ const SkillPage = () => {
             </div>
             <h3>Third-Party APIs</h3>
             <div className="section-skills-item">
-                {thirdParties.map(({ name, star, starFill, starHalf }, i) => {
+                {thirdParties.map(({ skillName, star, starFill, starHalf }, i) => {
                     return (
                         <SkillItem
                             key={i}
-                            name={name}
+                            skillName={skillName}
+                            starFill={starFill}
+                            starHalf={starHalf}
+                            star={star}
+                        />
+                    );
+                })}
+            </div>
+            <h3>Creativity</h3>
+            <div className="section-skills-item">
+                {creativeSkills.map(({ skillName, star, starFill, starHalf }, i) => {
+                    return (
+                        <SkillItem
+                            key={i}
+                            skillName={skillName}
                             starFill={starFill}
                             starHalf={starHalf}
                             star={star}
@@ -56,11 +71,11 @@ const SkillPage = () => {
             </div>
             <h3>Tools</h3>
             <div className="section-skills-item">
-                {toolSkills.map(({ name, star, starFill, starHalf }, i) => {
+                {toolSkills.map(({ skillName, star, starFill, starHalf }, i) => {
                     return (
                         <SkillItem
                             key={i}
-                            name={name}
+                            skillName={skillName}
                             starFill={starFill}
                             starHalf={starHalf}
                             star={star}
