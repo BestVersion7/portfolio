@@ -1,7 +1,7 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 // This function can be marked `async` if using `await` inside
-export async function middleware(req) {
+export async function middleware(req: NextRequest) {
     // if (process.env.NODE_ENV !== "production") {
     //     return NextResponse.next();
     // }
