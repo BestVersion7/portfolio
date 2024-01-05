@@ -1,21 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 
-let allowedOrigins: string[] = [];
-process.env.NODE_ENV === "production"
-  ? (allowedOrigins = [
-      "https://hunterkf.com",
-      "https://speedruntravel.com",
-      "https://cooperpricehealth.vercel.app/",
-    ])
-  : (allowedOrigins = ["http://localhost:3000"]);
-
 // This function can be marked `async` if using `await` inside
 export async function middleware(req: NextRequest) {
   // if (process.env.NODE_ENV !== "production") {
   //     return NextResponse.next();
   // }
-
-  const { origin } = req.nextUrl;
 
   // validate the headers with the api key
   const xApiKey = req.headers.get("authorization");
@@ -37,5 +26,7 @@ export const config = {
     "/api/test",
     "/api/booking",
     "/api/booking/patient",
+    "/api/v2/stripe/customer",
+    "/api/v2/stripe/invoice",
   ],
 };
