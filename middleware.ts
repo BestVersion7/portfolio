@@ -20,7 +20,7 @@ export async function middleware(req: NextRequest) {
   // validate the headers with the api key
   const xApiKey = req.headers.get("authorization");
 
-  if (xApiKey !== process.env.API_KEY && allowedOrigins.includes(origin)) {
+  if (xApiKey !== process.env.API_KEY) {
     // cannot do {status: 401}
     return NextResponse.json({ message: "Unauthorized" });
   }
