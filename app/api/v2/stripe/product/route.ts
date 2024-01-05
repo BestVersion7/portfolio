@@ -4,7 +4,13 @@ const stripe = require("stripe")(process.env.STRIPE_KEY);
 export async function GET(req: NextRequest) {
   try {
     const productId = req.nextUrl.searchParams.get("product_id");
-    const data = await stripe.products.retrieve(productId);
+    let data;
+
+    if (productId) {
+      data = await stripe.products.retrieve(productId);
+    } else {
+      data = await stripe.products.list();
+    }
     return NextResponse.json(data);
   } catch (err) {
     return NextResponse.json(err, { status: 500 });
