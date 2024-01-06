@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest) {
     try {
         // check for cookies
-        const cartCookie = req.nextUrl.searchParams.get("cartcookie");
+        const cartCookie = req.nextUrl.searchParams.get("cookie_id");
 
         if (!cartCookie || cartCookie === "undefined") {
             return NextResponse.json([]);
@@ -34,10 +34,9 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
     // const price = req.nextUrl.searchParams.get('price')
     const { quantity, price_id, product_id, product_price } = await req.json();
+    const cartCookie = req.nextUrl.searchParams.get("cookie_id");
 
     try {
-        let cartCookie = req.nextUrl.searchParams.get("cookie_id");
-
         const find = await prisma.cartInfo.findMany({
             where: {
                 cookie_id: cartCookie,
