@@ -28,6 +28,6 @@ export const config = {
         "/api/booking/patient",
         "/api/v2/stripe/customer",
         "/api/v2/stripe/invoice",
-        "/api/v2/stripe/cartcookie",
+        "/api/v2/cartcookie",
     ],
 };
