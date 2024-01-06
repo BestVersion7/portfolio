@@ -8,6 +8,7 @@ export async function POST() {
 
         const response = NextResponse.json("cookie created");
         response.cookies.set({
+            domain: "localhost:3000",
             name: "cookiecart",
             value: data.cookie_id,
             secure: true,
