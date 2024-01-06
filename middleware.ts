@@ -26,8 +26,6 @@ export const config = {
         "/api/test",
         "/api/booking",
         "/api/booking/patient",
-        "/api/v2/stripe/customer",
-        "/api/v2/stripe/invoice",
-        "/api/v2/cartcookie",
+        "/api/v2/*",
     ],
 };
