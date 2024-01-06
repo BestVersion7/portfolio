@@ -26,6 +26,6 @@ export const config = {
         "/api/test",
         "/api/booking",
         "/api/booking/patient",
-        "/api/v2/*",
+        "/api/v2/:path*",
     ],
 };
