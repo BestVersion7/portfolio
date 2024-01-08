@@ -35,12 +35,12 @@ export const businessSkills = [
     //     starHalf: 0,
     //     star: 1,
     // },
-    // {
-    //     skillName: "Quickbooks Online",
-    //     starFill: 4,
-    //     starHalf: 0,
-    //     star: 1,
-    // },
+    {
+        skillName: "Quickbooks Online",
+        starFill: 4,
+        starHalf: 0,
+        star: 1,
+    },
     // {
     //     skillName: "Tableau",
     //     starFill: 3,
@@ -70,6 +70,12 @@ export const webDevelopmentSkills = [
     },
     {
         skillName: "Typescript",
+        starFill: 4,
+        starHalf: 0,
+        star: 1,
+    },
+    {
+        skillName: "Tailwindcss",
         starFill: 4,
         starHalf: 0,
         star: 1,
@@ -163,9 +169,8 @@ export const thirdParties = [
         starHalf: 0,
         star: 1,
     },
-]
+];
 export const creativeSkills = [
-
     {
         skillName: "Adobe Photoshop",
         starFill: 4,
@@ -184,8 +189,7 @@ export const creativeSkills = [
         starHalf: 0,
         star: 2,
     },
-
-]
+];
 export const toolSkills = [
     {
         skillName: "GIT",
@@ -205,5 +209,4 @@ export const toolSkills = [
         starHalf: 1,
         star: 0,
     },
-
 ];

@@ -25,7 +25,7 @@ export const ProjectItem = (props: IProject) => {
             <p>
                 <b>Link to Code: </b>
                 <a
-                    className="break-words"
+                    className="break-all"
                     href={props.gitHubLink}
                     target="_blank"
                     rel="noopener noreferrer"

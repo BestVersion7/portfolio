@@ -1,18 +1,18 @@
 export const webProjects = [
     {
         title: "E-Commerce Store Built with Stripe (Full Stack)",
-        url_link: "https://afashionstore.vercel.app/",
+        url_link: "https://afashionstore.vercel.app",
         url_image:
             "https://res.cloudinary.com/crimson-flamingo/video/upload/v1691376473/3105%20portfolio%20screenshots/CooperPriceHealth_-_Personal_-_Microsoft_Edge_2023-08-06_22-30-02.mp4",
         description:
             "This is an e-commerce site built using Stripe. I am using the products, price, payment element, customers api from Stripe to create a custom order and payment workflow. I migrated all the tables and data from AWS RDS for the below projects to the Supabase Postgres instance. When a user adds an item to his cart, it saves a cookie to his browser. This cookie is for tracking updates and changes to his cart for 30 days. Then he can go to checkout and pay using a real or test credit card. Both will work. Then his browser cookie will get deleted and he can start a new purchase.",
         technologiesUsed:
             "Typescript>90%, Tailwindcss, Nextjs, Supabase (Postgres), Prisma, Stripe, Cloudinary , Git",
-        gitHubLink: "https://github.com/BestVersion7/cooperpricehealth",
+        gitHubLink: "https://github.com/BestVersion7/fashionstore",
     },
     {
         title: "Doctor Appointment Booking Site (Full Stack)",
-        url_link: "https://cooperpricehealth.vercel.app/",
+        url_link: "https://cooperpricehealth.vercel.app",
         url_image:
             "https://res.cloudinary.com/crimson-flamingo/video/upload/v1691376473/3105%20portfolio%20screenshots/CooperPriceHealth_-_Personal_-_Microsoft_Edge_2023-08-06_22-30-02.mp4",
         description:

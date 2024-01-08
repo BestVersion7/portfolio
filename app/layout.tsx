@@ -12,12 +12,16 @@ export const metadata = {
     keywords: "projects",
 };
 
-export default function RootLayout({ children }: {children: React.ReactNode}) {
+export default function RootLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
     return (
         <html lang="en">
             <GoogleAnalytics />
             <body className={inter.className}>
-                <Navigation2 />
+                {/* <Navigation2 /> */}
                 {children}
                 <Footer />
             </body>
