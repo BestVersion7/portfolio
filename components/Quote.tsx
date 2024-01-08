@@ -1,11 +1,11 @@
-type IQuote = { quote: string, author: string }
+type IQuote = { quote: string; author: string };
 
 import { string } from "prop-types";
 export const Quote = ({ quote, author }: IQuote) => {
     return (
         <p className="quote">
             <i>
-                {quote} <br />-{author}
+                {quote} -{author}
             </i>
         </p>
     );

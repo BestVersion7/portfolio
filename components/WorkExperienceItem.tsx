@@ -1,22 +1,21 @@
 type IWorkExperience = {
-    company: string,
-    position: string,
-    summary: string,
-    date: string
-}
+    company: string;
+    position: string;
+    summary: string;
+    date: string;
+};
 
 export const WorkExperienceItem = (workExperience: IWorkExperience) => {
-    const { company, position, summary, date } = workExperience
+    const { company, position, summary, date } = workExperience;
     return (
         <div className="section-work-container-items">
             <div>
                 {company}
-                <br /> {date}
+                {date}
             </div>
             <div>
-                <b>{position}</b> <br /> {summary}
+                <b>{position}</b> {summary}
             </div>
-            <br />
         </div>
     );
 };

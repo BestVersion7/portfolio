@@ -1,20 +1,20 @@
 type IProject = {
-    title: string
-    url_link: string
-    gitHubLink: string
-    url_image: string
-    technologiesUsed: string
-    description: string
-}
+    title: string;
+    url_link: string;
+    gitHubLink: string;
+    url_image: string;
+    technologiesUsed: string;
+    description: string;
+};
 
 export const ProjectItem = (props: IProject) => {
     return (
-        <article className="section-projects-web-items">
+        <article className="card px-5 py-4">
             <h2>{props.title}</h2>
             <p>
                 <b>Link to Project: </b>
                 <a
-                    style={{ wordWrap: "break-word" }}
+                    className="break-words"
                     href={props.url_link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -25,7 +25,7 @@ export const ProjectItem = (props: IProject) => {
             <p>
                 <b>Link to Code: </b>
                 <a
-                    style={{ wordWrap: "break-word" }}
+                    className="break-words"
                     href={props.gitHubLink}
                     target="_blank"
                     rel="noopener noreferrer"

@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    padding: 0;
+    margin: auto;
+    max-width: 90em;
+    background-color: rgb(236, 231, 231);
+}
+
+@layer components {
+    .dropshadow {
+        @apply shadow-md border-2 border-green-500 border-solid rounded-md
+    }
+    .dropshadow2 {
+        @apply shadow-md border-2 border-blue-500 border-solid rounded-md
+    }
+    .card {
+        @apply bg-green-50 border-2 border-purple-600 border-solid rounded-3xl shadow-lg hover:bg-blue-50 hover:cursor-pointer
+    }
+}
+
+@layer base {
+    h2 {
+        @apply text-2xl font-bold text-blue-700 
+    }
+}
+
 // @mixin mQ($width) {
 //     @media (min-width: $width) {
 //         @content;

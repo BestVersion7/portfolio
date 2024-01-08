@@ -7,21 +7,21 @@ import SkillItemList from "@/components/SkillItemList";
 
 export default function Home() {
     return (
-        <main className="mx-2 md:mx-5">
-            <section>
+        <main>
+            <section className="section-profile">
                 <div className="text-center">
-                    <p className="mt-3 bg-blue-100 py-2 text-2xl dropshadow">
-                        Hi I'm Hunter. Welcome!
+                    <p className=" text-green-900 text-3xl ">
+                        Hi I'm Hunter. Welcome to my site!
                     </p>
-
+                    <hr />
                     <h2>My Story</h2>
-                    <article>
+                    <article className="section-profile-about">
                         <Image
                             height={150}
                             width={150}
                             src="https://res.cloudinary.com/crimson-flamingo/image/upload/v1603662887/1104%20profile/me.png"
                             alt="hunter"
-                            className=""
+                            className="rounded-full"
                         />
                         <p>
                             I am self-taught full stack web developer with a
@@ -29,16 +29,16 @@ export default function Home() {
                             worked in the accounting departments for startups
                             and large corporations. Besides work, I enjoy
                             building websites and learning new technologies.
+                            Scroll down to see my projects!
                         </p>
                     </article>
-
                     <article className="section-profile-about">
                         <Image
                             height={150}
                             width={150}
                             src={suffolk}
                             alt="suffolk"
-                            className=""
+                            className="rounded-full"
                         />
                         <p>
                             I graduated Suffolk University in May 2019 located
@@ -50,7 +50,6 @@ export default function Home() {
                         </p>
                     </article>
                 </div>
-
                 <section>
                     <h2>Work Experience</h2>
                     <Quote
