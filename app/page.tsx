@@ -7,21 +7,12 @@ import SkillItemList from "@/components/SkillItemList";
 
 export default function Home() {
     return (
-        <div>
-            <section className="section-home" style={{ borderRadius: 0 }}>
-                <div>
-                    <div className="section-home-name">
-                        <h2>{`Hi I'm Hunter`}</h2>
-                        <h2>Welcome to my site! </h2>
-                    </div>
-                    <button className="icon-down">
-                        <i>Scroll down</i>
-                    </button>
-                </div>
-            </section>
+        <main>
             <section className="section-profile">
-                <div id="section-profile-id">
-                    <br /> <h1>Profile</h1>
+                <div className="text-center">
+                    <p className=" text-green-900 text-3xl ">
+                        Hi I'm Hunter. Welcome to my site!
+                    </p>
                     <hr />
                     <h2>My Story</h2>
                     <article className="section-profile-about">
@@ -68,6 +59,7 @@ export default function Home() {
                     <WorkExperienceItemList />
                 </section>
             </section>
+
             <section className="section-skills">
                 <br /> <h2>Skills and Abilities</h2>
                 <Quote
@@ -90,6 +82,6 @@ export default function Home() {
                 <br />
             </section>
             <br />
-        </div>
+        </main>
     );
 }
