@@ -88,7 +88,7 @@ export async function PUT(req: NextRequest) {
                 quantity,
             },
         });
-        return NextResponse.json("update success", { status: 201 });
+        return NextResponse.json("update success");
     } catch (err) {
         return NextResponse.json(err, { status: 500 });
     }
@@ -106,7 +106,7 @@ export async function DELETE(req: NextRequest) {
                 cookie_id: cartCookie,
             },
         });
-        return NextResponse.json("update success", { status: 201 });
+        return NextResponse.json("delete success");
     } catch (err) {
         return NextResponse.json(err, { status: 500 });
     }

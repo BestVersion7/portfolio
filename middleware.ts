@@ -11,7 +11,7 @@ export async function middleware(req: NextRequest) {
 
     if (xApiKey !== process.env.API_KEY) {
         // cannot do {status: 401}
-        return NextResponse.json({ message: "Unauthorized" });
+        return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
     }
 
     return NextResponse.next();
