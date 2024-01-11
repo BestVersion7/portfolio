@@ -3,7 +3,7 @@ import { ProjectItem } from "./ProjectItem";
 
 const ProjectItemList = () => {
     return (
-        <div className="text-center grid gap-8 md:gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="text-center grid gap-4 lg:grid-cols-2">
             {webProjects.map((item, i) => {
                 return (
                     <ProjectItem

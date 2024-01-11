@@ -24,7 +24,7 @@ export default function Home() {
                             className="rounded-full"
                         />
                         <p>
-                            I am self-taught full stack web developer with a
+                            I am a self-taught full stack web developer with a
                             background in finance. In the past 3+ years, I have
                             worked in the accounting departments for startups
                             and large corporations. Besides work, I enjoy

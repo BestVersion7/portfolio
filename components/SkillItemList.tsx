@@ -10,7 +10,9 @@ import { SkillItem } from "./SkillItem";
 const SkillPage = () => {
     return (
         <>
-            <h3>Business Skills</h3>
+            <h3 className="text-orange-500 font-bold tracking-wider text-xl pt-2">
+                Business Skills
+            </h3>
             <div className="md:grid md:gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {businessSkills.map(
                     ({ skillName, star, starFill, starHalf }, i) => {
@@ -27,7 +29,9 @@ const SkillPage = () => {
                 )}
             </div>
 
-            <h3>Full-Stack Web Development</h3>
+            <h3 className="text-orange-500 font-bold tracking-wider text-xl pt-2">
+                Full-Stack Web Development
+            </h3>
             <div className="md:grid md:gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {webDevelopmentSkills.map(
                     ({ skillName, star, starFill, starHalf }, i) => {
@@ -43,7 +47,9 @@ const SkillPage = () => {
                     }
                 )}
             </div>
-            <h3>Third-Party APIs</h3>
+            <h3 className="text-orange-500 font-bold tracking-wider text-xl pt-2">
+                Third-Party APIs
+            </h3>
             <div className="md:grid md:gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {thirdParties.map(
                     ({ skillName, star, starFill, starHalf }, i) => {
@@ -59,7 +65,9 @@ const SkillPage = () => {
                     }
                 )}
             </div>
-            <h3>Creativity</h3>
+            <h3 className="text-orange-500 font-bold tracking-wider text-xl pt-2">
+                Creativity
+            </h3>
             <div className="md:grid md:gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {creativeSkills.map(
                     ({ skillName, star, starFill, starHalf }, i) => {
@@ -75,7 +83,9 @@ const SkillPage = () => {
                     }
                 )}
             </div>
-            <h3>Tools</h3>
+            <h3 className="text-orange-500 font-bold tracking-wider text-xl pt-2">
+                Tools
+            </h3>
             <div className="md:grid md:gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {toolSkills.map(
                     ({ skillName, star, starFill, starHalf }, i) => {

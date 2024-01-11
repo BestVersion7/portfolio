@@ -1,11 +1,12 @@
 export const webProjects = [
+    // webscrape
     {
-        title: "E-Commerce Store Built with Stripe (Full Stack)",
+        title: "E-Commerce Stripe Store (Full Stack)",
         url_link: "https://afashionstore.vercel.app",
         url_image:
-            "https://res.cloudinary.com/crimson-flamingo/video/upload/v1691376473/3105%20portfolio%20screenshots/CooperPriceHealth_-_Personal_-_Microsoft_Edge_2023-08-06_22-30-02.mp4",
+            "https://res.cloudinary.com/crimson-flamingo/video/upload/v1704917278/3105%20portfolio%20screenshots/Sequence_01.mp4",
         description:
-            "This is an e-commerce site built using Stripe. I am using the products, price, payment element, customers api from Stripe to create a custom order and payment workflow. I migrated all the tables and data from AWS RDS for the below projects to the Supabase Postgres instance. When a user adds an item to his cart, it saves a cookie to his browser. This cookie is for tracking updates and changes to his cart for 30 days. Then he can go to checkout and pay using a real or test credit card. Both will work. Then his browser cookie will get deleted and he can start a new purchase.",
+            "This is an e-commerce site built using Stripe. I am using the products, price, payment element, customers api from Stripe to create a custom order and payment workflow. I migrated all the tables and data from AWS RDS for the below projects to the Supabase Postgres instance. When a user adds an item to his cart, it saves a cookie to his browser. This cookie is for tracking updates and changes to his cart for 30 days. Then he can go to checkout and pay using a real or test credit card. Both will work. Also, he can update the quantity and the total will update, also updating the payment intent on stripe through my api code. After the purchase, I will get a notification email and his browser cookie will get deleted and he can start a new purchase.",
         technologiesUsed:
             "Typescript>90%, Tailwindcss, Nextjs, Supabase (Postgres), Prisma, Stripe, Cloudinary , Git",
         gitHubLink: "https://github.com/BestVersion7/fashionstore",
@@ -14,7 +15,7 @@ export const webProjects = [
         title: "Doctor Appointment Booking Site (Full Stack)",
         url_link: "https://cooperpricehealth.vercel.app",
         url_image:
-            "https://res.cloudinary.com/crimson-flamingo/video/upload/v1691376473/3105%20portfolio%20screenshots/CooperPriceHealth_-_Personal_-_Microsoft_Edge_2023-08-06_22-30-02.mp4",
+            "https://res.cloudinary.com/crimson-flamingo/video/upload/v1704943375/3105%20portfolio%20screenshots/CooperPriceHealth_-_Personal_-_Microsoft_Edge_2024-01-10_22-18-34.mp4",
         description:
             "The goal of this website is to inform users about mental health and allow them to book an appointment with a therapist. It is a full stack website that allows users to book an appointment with a therapist. I added a default test account to use to book the appointment. Once a date and time is booked, the availability on the calendar updates and is no longer available. I am using react-calendar to make the view easier and all the data is stored on RDS. The api is stored on this domain /api/booking. Lastly, I used Bootstrap for styling the buttons.",
         technologiesUsed:
@@ -23,7 +24,7 @@ export const webProjects = [
     },
 
     {
-        title: "Personal Travel Blog (Full Stack)",
+        title: "Personal Travel Blog And CMS (Full Stack)",
         url_link: "https://speedruntravel.com",
         url_image:
             "https://res.cloudinary.com/crimson-flamingo/video/upload/v1691376471/3105%20portfolio%20screenshots/SpeedRunTravel_-_Personal_-_Microsoft_Edge_2023-08-06_22-31-38.mp4",
@@ -35,7 +36,7 @@ export const webProjects = [
     },
 
     {
-        title: "Personal Drink Collection Recipe Blog (Full Stack)",
+        title: "Personal Drink Recipe Blog (Full Stack)",
         url_link: "https://winestore.vercel.app/",
         url_image:
             "https://res.cloudinary.com/crimson-flamingo/video/upload/v1691376473/3105%20portfolio%20screenshots/Wine_Blog_-_Personal_-_Microsoft_Edge_2023-08-06_22-45-58.mp4",

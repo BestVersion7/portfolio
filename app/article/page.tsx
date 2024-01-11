@@ -14,8 +14,8 @@ export default function ProjectPage() {
 );`;
 
     return (
-        <main className="project-container">
-            <div className="project-container-body">
+        <main className="article">
+            <div>
                 <h2>Implementation</h2>
                 <p>
                     This is full-stack website built using Next 13 and deployed
@@ -53,6 +53,7 @@ export default function ProjectPage() {
                     <Link
                         href="https://github.com/BestVersion7/trainingnext13/tree/main/app/api.
 "
+                        className="underline break-words"
                     >
                         https://github.com/BestVersion7/trainingnext13/tree/main/app/api.
                     </Link>{" "}
@@ -102,7 +103,10 @@ export default function ProjectPage() {
                     database, it is critical to have a management system to be
                     able to perform basic CRUD operations. I built a dashboard
                     that allows me to do just that. On{" "}
-                    <Link href="https://www.speedruntravel.com/dashboard">
+                    <Link
+                        className="break-words"
+                        href="https://www.speedruntravel.com/dashboard"
+                    >
                         https://www.speedruntravel.com/dashboard
                     </Link>
                     , you can see all my public and private articles and reels
@@ -135,8 +139,10 @@ export default function ProjectPage() {
                     create a table I would command line into the AWS RDS. For
                     example
                 </p>
-                <pre>{awsLine}</pre>
-                <pre>{psqlLine}</pre>
+                <pre className="bg-white overflow-scroll">{awsLine}</pre>
+                <br />
+
+                <pre className="bg-white overflow-scroll">{psqlLine}</pre>
 
                 <h2>Tools:</h2>
                 <p>

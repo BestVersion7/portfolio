@@ -2,299 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    padding: 0;
-    margin: auto;
-    max-width: 90em;
-    background-color: rgb(236, 231, 231);
-}
-
 @layer components {
     .dropshadow {
-        @apply shadow-md border-2 border-green-500 border-solid rounded-md
+        @apply shadow-md border-2 border-green-500 border-solid rounded-md;
     }
     .dropshadow2 {
-        @apply shadow-md border-2 border-blue-500 border-solid rounded-md
+        @apply shadow-md border-2 border-blue-500 border-solid rounded-md;
     }
     .card {
-        @apply  bg-green-50 border-2 border-purple-600 border-solid rounded-3xl shadow-lg hover:bg-yellow-50 hover:cursor-pointer
+        @apply bg-green-50 border-2 border-purple-600 border-solid rounded-3xl shadow-lg;
+    }
+    .article h2 {
+        @apply text-2xl tracking-wider font-semibold text-pink-500;
+    }
+    .article ol li {
+        @apply bg-red-100
     }
 }
 
 @layer base {
-    h2 {
-        @apply text-2xl font-bold text-blue-700 
+    body {
+        @apply p-0 m-auto max-w-7xl bg-slate-200;
     }
     h3 {
-        @apply text-xl font-bold text-purple-500
+        @apply text-xl;
+    }
+    main {
+        @apply bg-orange-50 px-4 py-3;
+    }
+    main h2 {
+        @apply text-xl text-center border-solid border border-black bg-yellow-100 py-3 rounded-lg tracking-tighter
     }
 }
-
-// @mixin mQ($width) {
-//     @media (min-width: $width) {
-//         @content;
-//     }
-// }
-
-// @mixin marginBottom {
-//     margin: 0 0;
-// }
-
-// $borderRadius: 0em;
-// $boxShadow: 1em 0.5em 0.5em 0 rgb(97, 96, 96);
-
-// .icons {
-//     height: 2.5em;
-//     width: 2.5em;
-//     background-color: lightblue;
-// }
-
-// // navigation
-// header {
-//     background-color: rgb(27, 20, 3);
-   
-//     .section-nav-links {
-//         font-size: 2em;
-//         margin: 1em;
-//         line-height: 2em;
-//         color: rgb(137, 224, 137);
-//         border-top: 0.1px solid rgb(197, 245, 197);
-//         border-bottom: 0.1px solid rgb(197, 245, 197);
-
-//         &:link {
-//             text-decoration: none;
-//         }
-//         &:hover {
-//             color: rgb(79, 209, 137);
-//             background-color: lighten(rgb(53, 51, 44), 13);
-//         }
-//     }
-// }
-
-// .section-work-container {
-//     margin: 0 1em;
-//     @include mQ(30em) {
-//         margin: 0 3em;
-//     }
-//     @include mQ(50em) {
-//         margin: 0 5em;
-//     }
-//     .section-work-container-items {
-//         @include mQ(30em) {
-//             display: grid;
-//             grid-template-columns: 13em 1fr;
-//         }
-//     }
-// }
-
-// body {
-//     padding: 0;
-//     margin: auto;
-//     max-width: 100em;
-//     background-color: lightgray;
-//     // background-color: rgb(251, 251, 251);
-//     display: grid;
-//     grid-template-rows: 4em 1fr;
-
-//     .quote {
-//         text-align: center;
-//     }
-//     h1,
-//     h2,
-//     h3 {
-//         text-align: center;
-//     }
-// }
-
-// .section-skills {
-//     background: rgb(231, 230, 158);
-//     border-radius: $borderRadius;
-//     box-shadow: $boxShadow;
-//     .section-skills-item {
-//         display: grid;
-//         grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-//         margin: 0 1em;
-
-//         .section-skills-item-mapped {
-//             display: grid;
-//             grid-template-columns: 1fr 1fr;
-//         }
-//     }
-// }
-
-// .section-profile {
-//     background-color: beige;
-//     border-radius: $borderRadius;
-//     box-shadow: $boxShadow;
-
-//     h1 {
-//         margin-top: 0;
-//     }
-//     .section-profile-about {
-//         margin: 0 1em;
-
-//         @include mQ(30em) {
-//             display: grid;
-//             margin: 0 3em;
-//             grid-gap: 3em;
-//             grid-template-columns: minmax(auto, 7em) 1fr;
-//         }
-//         @include mQ(50em) {
-//             margin: 0 5em;
-//         }
-//         .rounded-full {
-//             border-radius: 15em;
-//         }
-//     }
-// }
-
-// .section-home {
-//     border-radius: $borderRadius;
-//     box-shadow: $boxShadow;
-//     background-image: url(https://res.cloudinary.com/crimson-flamingo/image/upload/v1560960995/3105%20portfolio%20screenshots/own_website_home.jpg);
-//     text-align: center;
-//     position: relative;
-//     background-size: cover;
-//     height: 75vh;
-//     @include mQ(30em) {
-//         height: 30em;
-//     }
-//     @include mQ(50em) {
-//         height: 35em;
-//     }
-//     .section-home-name {
-//         position: relative;
-//         top: 4em;
-//         margin: auto;
-//         width: 70%;
-//         background: yellow;
-//         border: solid black;
-//         box-shadow: 5px 10px;
-//     }
-//     .icon-down {
-//         position: absolute;
-//         background-color: yellow;
-//         bottom: 1em;
-//         left: 0;
-//         right: 0;
-//         margin: auto;
-//         width: 4em;
-//     }
-// }
-
-// .section-projects {
-//     border-radius: $borderRadius;
-//     box-shadow: $boxShadow;
-//     background-color: rgb(240, 255, 215);
-//     .section-projects-web {
-//         text-align: center;
-//         margin: 0 1em;
-//         display: grid;
-//         grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-//         grid-gap: 3em;
-//         @include mQ(50em) {
-//             grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
-//         }
-
-//         .section-projects-web-items {
-//             // width: 100%;
-//             border-radius: 3em;
-//             box-shadow: 10px 5px;
-//             background-color: aliceblue;
-//             border: 0.1em solid black;
-//             &:hover {
-//                 cursor: pointer;
-//                 background-color: darken(aliceblue, 5%);
-//             }
-//             .project-image {
-//                 width: 90%;
-//                 // height: 500px;
-//                 // object-fit: contain;
-//             }
-//         }
-//     }
-// }
-
-// .project-container {
-//     background-color: aliceblue;
-//     .project-container-body {
-//         word-break: break-word;
-//         margin: 0 1.5em;
-//         @include mQ(50em) {
-//             margin: 0 3em;
-//         }
-//     }
-//     h2 {
-//         color: blue;
-//     }
-//     h3 {
-//         color: darkcyan;
-//     }
-
-//     pre {
-//         width: 80vw;
-//         overflow: auto;
-//         background-color: white;
-//     }
-//     b {
-//         color: red;
-//     }
-// }
-
-// footer {
-//     background: darkslategray;
-//     text-align: center;
-//     color: darken($color: white, $amount: 10);
-//     a {
-//         padding: 0 0.3em;
-//     }
-// }
-
-// .container-article {
-//     display: grid;
-//     grid-gap: 0.5em;
-//     @include mQ(30em) {
-//         grid-template-columns: repeat(2, 1fr);
-//     }
-//     @include mQ(70em) {
-//         grid-template-columns: repeat(3, 1fr);
-//     }
-//     .container-article-home {
-//         border: 0.1px solid gray;
-//         background-color: lighten(lightgreen, 15);
-//         box-shadow: 2px 3px black;
-//         .container-article-home-link {
-//             display: grid;
-//             grid-gap: 1em;
-//             grid-template-columns: 6em auto;
-//             height: 4em;
-//             text-decoration: none;
-//             padding: 0.3em 0.5em;
-//             &:hover {
-//                 background-color: lightblue;
-//             }
-//         }
-//     }
-// }
-
-// .container-article-article {
-//     h3 {
-//         text-align: center;
-//     }
-//     .container-article-article-author {
-//         text-align: center;
-//     }
-//     figure {
-//         display: block;
-//         margin: 0;
-//         max-width: 50em;
-//     }
-// }
-// .section-article-col2 {
-//     display: none;
-//     @include mQ(50em) {
-//         // position: static;
-//         display: block;
-//         background-color: lightcyan;
-//     }
-// }

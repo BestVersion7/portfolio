@@ -9,12 +9,13 @@ type IProject = {
 
 export const ProjectItem = (props: IProject) => {
     return (
-        <article className="card px-5 py-4">
-            <h2>{props.title}</h2>
-            <p>
-                <b>Link to Project: </b>
+        <article className="border-2 border-slate-800 border-solid bg-orange-300 px-1 sm:px-3 py-4 flex gap-3 flex-col justify-between rounded-2xl shadow-md">
+            <h2 className="  tracking-wider  border-black">{props.title}</h2>
+
+            <p className=" bg-pink-100  border border-solid border-black shadow-md rounded-md">
+                <b>Link to Project: </b> <br />
                 <a
-                    className="break-words"
+                    className="break-all underline "
                     href={props.url_link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -22,10 +23,14 @@ export const ProjectItem = (props: IProject) => {
                     {props.url_link}
                 </a>
             </p>
-            <p>
-                <b>Link to Code: </b>
+            <p className="px-4 py-2  bg-gray-50 border border-solid border-black shadow-md rounded-md">
+                <b>Technologies Used:</b> <br />
+                <span>{props.technologiesUsed}</span>
+            </p>
+            <p className="  bg-gray-50 border border-solid border-black shadow-md rounded-md">
+                <b>Link to Code: </b> <br />
                 <a
-                    className="break-all"
+                    className="break-all underline"
                     href={props.gitHubLink}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -37,11 +42,9 @@ export const ProjectItem = (props: IProject) => {
                 <source type="video/mp4" src={props.url_image} /> Your browser
                 does not support playing this video
             </video>
-            <p>
-                <b>Technologies Used:</b> {props.technologiesUsed}
-            </p>
-            <p>
-                <b>Description:</b> {props.description}
+
+            <p className=" px-4 overflow-auto py-2 bg-gray-50 border border-solid border-black shadow-md rounded-md">
+                Description: {props.description}
             </p>
         </article>
     );
