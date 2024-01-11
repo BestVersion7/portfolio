@@ -11,7 +11,7 @@ export default function Home() {
             <section className="section-profile">
                 <div className="text-center">
                     <p className=" text-green-900 text-3xl ">
-                        Hi I'm Hunter. Welcome to my site!
+                        Hi {`$I'm`} Hunter. Welcome to my site!
                     </p>
                     <hr />
                     <h2>My Story</h2>
