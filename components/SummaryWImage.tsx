@@ -8,14 +8,16 @@ type props = {
 
 export const SummaryWImage = (props: props) => {
     return (
-        <article className="flex items-center flex-col sm:flex-row border rounded-xl border-black border-solid bg-blue-50 ">
-            <Image
-                height={150}
-                width={150}
-                src={props.img}
-                alt="hunter"
-                className=" rounded-full border-black border-2 m-2 shadow-md "
-            />
+        <article className=" text-center py-4 grid grid-rows-[160px,_1fr] border rounded-xl border-black border-solid bg-blue-50">
+            <div>
+                <Image
+                    height={150}
+                    width={150}
+                    src={props.img}
+                    alt="hunter"
+                    className="m-auto rounded-full border-black border-2  shadow-md "
+                />
+            </div>
             <p className="px-2 py-3">
                 <span className="font-semibold text-xl tracking-widest text-orange-600">
                     {props.title1}

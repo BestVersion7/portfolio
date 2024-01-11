@@ -9,9 +9,9 @@ export default function Home() {
         <main>
             <h2>My Story</h2>
 
-            <section className="mt-2">
+            <section className=" mt-2 grid gap-3 md:grid-cols-2">
                 <SummaryWImage
-                    img="https://res.cloudinary.com/crimson-flamingo/image/upload/v1603662887/1104%20profile/me.png"
+                    img="https://res.cloudinary.com/crimson-flamingo/image/upload/v1704991935/1104%20profile/me2.png"
                     title1="Summary:"
                     desc="I am a
                     self-taught full stack web developer with a background in
@@ -25,9 +25,8 @@ export default function Home() {
                     (for their award winning database and I love SQL), and
                     StripeJS (every monetized needs this)."
                 />
-                <br />
                 <SummaryWImage
-                    img="https://res.cloudinary.com/crimson-flamingo/image/upload/v1704941214/1104%20profile/suffolk.webp"
+                    img="https://res.cloudinary.com/crimson-flamingo/image/upload/v1704991935/1104%20profile/suffolk2.webp"
                     title1="Education:"
                     desc="I graduated Suffolk University in May 2019 located in Boston,
                     MA. During my time here, I got to meet diverse and
