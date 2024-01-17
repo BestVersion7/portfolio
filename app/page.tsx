@@ -3,10 +3,42 @@ import ProjectItemList from "@/components/ProjectItemList";
 import WorkExperienceItemList from "@/components/WorkExperienceItemList";
 import SkillItemList from "@/components/SkillItemList";
 import { SummaryWImage } from "@/components/SummaryWImage";
+import { ContactBtn } from "@/components/ContactBtn";
+import { ContactForm } from "@/components/ContactForm";
 
-export default function Home() {
+export default function Home({
+    searchParams,
+}: {
+    searchParams: { modal: "t" | "f" };
+}) {
     return (
         <main>
+            {/* this is the fixed contact btn */}
+            {searchParams.modal === "t" && (
+                <div
+                    className="relative z-10"
+                    aria-labelledby="modal-title"
+                    role="dialog"
+                    aria-modal="true"
+                >
+                    <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+                    <div className="fixed inset-0 z-10 grid items-center justify-center text-center m-3">
+                        <div className=" bg-blue-100  max-w-md py-2 px-3">
+                            <h3
+                                className="text-base font-semibold  text-gray-900"
+                                id="modal-title"
+                            >
+                                Contact me
+                            </h3>
+
+                            <ContactForm />
+                        </div>
+                    </div>
+                </div>
+            )}
+            <ContactBtn />
+
             <h2>My Story</h2>
 
             <section className=" mt-2 grid gap-3 md:grid-cols-2">

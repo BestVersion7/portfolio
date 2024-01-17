@@ -8,7 +8,7 @@ type props = {
 
 export const SummaryWImage = (props: props) => {
     return (
-        <article className=" text-center py-4 grid grid-rows-[160px,_1fr] border rounded-xl border-black border-solid bg-blue-50">
+        <article className=" text-center py-4 grid grid-rows-[160px,100px] overflow-y-scroll border rounded-xl border-black border-solid bg-blue-50">
             <div>
                 <Image
                     height={150}
