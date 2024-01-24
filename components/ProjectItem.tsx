@@ -43,7 +43,7 @@ export const ProjectItem = (props: IProject) => {
                 does not support playing this video
             </video>
 
-            <p className=" px-4 h-40 overflow-auto py-2 bg-gray-50 border border-solid border-black shadow-md rounded-md">
+            <p className=" px-2 h-40 overflow-y-scroll py-2 bg-gray-50 border border-solid border-black shadow-md rounded-md">
                 Description: {props.description}
             </p>
         </article>

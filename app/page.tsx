@@ -41,7 +41,7 @@ export default function Home({
 
             <h2>My Story</h2>
 
-            <section className=" mt-2 grid gap-3 md:grid-cols-2">
+            <section className=" mt-2 grid gap-3 lg:grid-cols-2 ">
                 <SummaryWImage
                     img="https://res.cloudinary.com/crimson-flamingo/image/upload/v1704991935/1104%20profile/me2.png"
                     title1="Summary:"
@@ -71,28 +71,20 @@ export default function Home({
                 />
             </section>
 
-            <article>
-                <Quote
-                    quote="Protons give an atom its identity, electrons its personality."
-                    author="Bill Bryson"
-                />
+            <br />
+
+            <section>
                 <h2>Work Experience</h2>
                 <WorkExperienceItemList />
-                <Quote
-                    quote="The reason I've been able to be so financially successful is that my focus has never, ever for one minute been money"
-                    author="Oprah"
-                />
-            </article>
+            </section>
+            <br />
 
             <section>
                 <h2>Skills and Abilities</h2>
                 <SkillItemList />
-                <Quote
-                    quote="The secret to getting ahead is getting started."
-                    author="Mark Twain"
-                />
             </section>
 
+            <br />
             <section>
                 <h2>Passion Projects: </h2>
                 <ProjectItemList />

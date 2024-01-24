@@ -17,7 +17,7 @@ export const ContactForm = () => {
     };
 
     const handleClose = () => {
-        router.push("/?modal=f", { scroll: false });
+        router.push("/", { scroll: false });
     };
     return (
         <>
