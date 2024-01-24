@@ -24,14 +24,14 @@ export default function RootLayout({
                 <header className="bg-orange-600 text-white font-medium">
                     <nav className=" gap-5 text-lg py-3 flex items-center justify-end mr-5">
                         <Link
-                            className="tracking-wider hover:underline hover:text-green-700 "
+                            className="tracking-wider hover:text-green-300 "
                             href="/"
                         >
                             Home
                         </Link>
 
                         <Link
-                            className="tracking-wider  hover:underline hover:text-green-700"
+                            className="tracking-wider  hover:text-green-300"
                             href="/article"
                         >
                             Article
