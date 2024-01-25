@@ -23,18 +23,18 @@ export const businessSkills = [
     //     starHalf: 1,
     //     star: 0,
     // },
-    // {
-    //     skillName: "Salesforce",
-    //     starFill: 3,
-    //     starHalf: 1,
-    //     star: 1,
-    // },
-    // {
-    //     skillName: "Oracle",
-    //     starFill: 4,
-    //     starHalf: 0,
-    //     star: 1,
-    // },
+    {
+        skillName: "Salesforce",
+        starFill: 3,
+        starHalf: 1,
+        star: 1,
+    },
+    {
+        skillName: "Oracle",
+        starFill: 4,
+        starHalf: 0,
+        star: 1,
+    },
     {
         skillName: "Quickbooks Online",
         starFill: 4,
@@ -47,12 +47,12 @@ export const businessSkills = [
     //     starHalf: 1,
     //     star: 1,
     // },
-    // {
-    //     skillName: "3Elite",
-    //     starFill: 4,
-    //     starHalf: 0,
-    //     star: 1
-    // }
+    {
+        skillName: "3Elite",
+        starFill: 4,
+        starHalf: 0,
+        star: 1,
+    },
 ];
 
 export const webDevelopmentSkills = [
@@ -85,6 +85,12 @@ export const webDevelopmentSkills = [
         starFill: 4,
         starHalf: 0,
         star: 1,
+    },
+    {
+        skillName: "Next-Auth",
+        starFill: 4,
+        starHalf: 1,
+        star: 0,
     },
     {
         skillName: "Express.js",
@@ -127,12 +133,6 @@ export const webDevelopmentSkills = [
 
 export const thirdParties = [
     {
-        skillName: "OAuth 2.0",
-        starFill: 4,
-        starHalf: 1,
-        star: 0,
-    },
-    {
         skillName: "Google Console",
         starFill: 4,
         starHalf: 1,
@@ -169,6 +169,12 @@ export const thirdParties = [
         starHalf: 0,
         star: 1,
     },
+    {
+        skillName: "Postman",
+        starFill: 4,
+        starHalf: 1,
+        star: 0,
+    },
 ];
 export const creativeSkills = [
     {
@@ -199,12 +205,6 @@ export const toolSkills = [
     },
     {
         skillName: "VSCode",
-        starFill: 4,
-        starHalf: 1,
-        star: 0,
-    },
-    {
-        skillName: "Postman (Thunder Client)",
         starFill: 4,
         starHalf: 1,
         star: 0,
