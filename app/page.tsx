@@ -1,10 +1,16 @@
-import { Quote } from "@/components/Quote";
 import ProjectItemList from "@/components/ProjectItemList";
 import WorkExperienceItemList from "@/components/WorkExperienceItemList";
-import SkillItemList from "@/components/SkillItemList";
 import { SummaryWImage } from "@/components/SummaryWImage";
 import { ContactBtn } from "@/components/ContactBtn";
 import { ContactForm } from "@/components/ContactForm";
+import { SkillItemMap } from "@/components/SkillItemMap";
+import {
+    businessSkills,
+    webDevelopmentSkills,
+    thirdParties,
+    creativeSkills,
+    toolSkills,
+} from "@/components/data/skills";
 
 export default function Home({
     searchParams,
@@ -81,7 +87,25 @@ export default function Home({
 
             <section>
                 <h2>Skills and Abilities</h2>
-                <SkillItemList />
+                <div className="">
+                    <SkillItemMap
+                        title="Business Skills"
+                        skillArray={businessSkills}
+                    />
+                    <SkillItemMap
+                        title="Development Skills"
+                        skillArray={webDevelopmentSkills}
+                    />
+                    <SkillItemMap
+                        title="Api/Authentication"
+                        skillArray={thirdParties}
+                    />
+                    <SkillItemMap
+                        title="Creativity"
+                        skillArray={creativeSkills}
+                    />
+                    <SkillItemMap title="Tools" skillArray={toolSkills} />
+                </div>
             </section>
 
             <br />

@@ -22,9 +22,11 @@ export const SkillItem = (skill: ISkill) => {
         stars.push(<BsStar key={i} />);
     }
     return (
-        <div className=" flex justify-between border-2 shadow-sm border-solid border-blue-300 px-3 py-2 rounded-md my-1 items-center bg-gradient-to-r from-slate-900  to-slate-700  text-white font-semibold hover:cursor-pointer hover:from-slate-500 hover:to-slate-300">
+        // bg-gradient-to-r from-slate-900  to-slate-700
+        // flex justify-between
+        <div className="shadow-md border border-dotted border-violet-600 px-3 py-2 rounded-md my-1 flex items-center justify-between">
             <span>{skillName} </span>
-            <span className="flex text-orange-300">
+            <span className="flex text-orange-500">
                 {starsFill}
                 {starsHalf}
                 {stars}
