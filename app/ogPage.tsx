@@ -3,7 +3,6 @@ import ProjectItemList from "@/components/ProjectItemList";
 import WorkExperienceItemList from "@/components/WorkExperienceItemList";
 import Image from "next/image";
 import suffolk from "@/public/suffolk.png";
-import SkillItemList from "@/components/SkillItemList";
 
 export default function Home() {
     return (
@@ -66,7 +65,6 @@ export default function Home() {
                     quote="The reason I've been able to be so financially successful is that my focus has never, ever for one minute been money"
                     author="Oprah"
                 />
-                <SkillItemList />
             </section>
             <section className="section-projects">
                 <h2>Passion Projects: </h2>
