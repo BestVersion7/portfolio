@@ -5,6 +5,7 @@ type IProject = {
     url_image: string;
     technologiesUsed: string;
     description: string;
+    autoplay?: boolean;
 };
 
 export const ProjectItem = (props: IProject) => {
@@ -12,8 +13,8 @@ export const ProjectItem = (props: IProject) => {
         <article className="border border-slate-800 px-1 sm:px-3 py-4 flex gap-2 flex-col  rounded-2xl shadow-md">
             <h2 className="  tracking-wider ">{props.title}</h2>
 
-            <p className="   ">
-                <b>Link to Project: </b> <br />
+            <h3>Link to Project</h3>
+            <span>
                 <a
                     className="break-all underline px-2 py-1 bg-yellow-300 tracking-wider hover:bg-yellow-400"
                     href={props.url_link}
@@ -22,10 +23,10 @@ export const ProjectItem = (props: IProject) => {
                 >
                     {props.url_link}
                 </a>
-            </p>
+            </span>
 
-            <p className="  ">
-                <b>Link to Code: </b> <br />
+            <h3>Link to Code: </h3>
+            <span>
                 <a
                     className="break-all underline hover:bg-yellow-400"
                     href={props.gitHubLink}
@@ -34,12 +35,17 @@ export const ProjectItem = (props: IProject) => {
                 >
                     {props.gitHubLink}
                 </a>
-            </p>
-            <p className="px-4 py-2  ">
-                <b>Technologies Used:</b> <br />
-                <span>{props.technologiesUsed}</span>
-            </p>
-            <video controls muted autoPlay className="">
+            </span>
+
+            <h3>Technologies Used:</h3>
+            <span>{props.technologiesUsed}</span>
+
+            <video
+                controls
+                muted
+                autoPlay={props.autoplay}
+                className="border-2 border-black"
+            >
                 <source type="video/mp4" src={props.url_image} /> Your browser
                 does not support playing this video
             </video>

@@ -30,12 +30,12 @@ export default function RootLayout({
                             Home
                         </Link>
 
-                        {/* <Link
-                            className="tracking-wider  hover:underline hover:text-green-700"
+                        <Link
+                            className="tracking-wider  hover:text-green-300"
                             href="/project"
                         >
                             Projects
-                        </Link> */}
+                        </Link>
                         <Link
                             className="tracking-wider  hover:text-green-300"
                             href="/article"

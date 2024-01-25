@@ -8,8 +8,19 @@ export const webProjects = [
         description:
             "This is an e-commerce site built using Stripe API. Users can purchase products, update or delete quantity, create an account to view past orders and more. The availability of the products are real-time and once a user successfully purchases an item, an order will be created and the available product quantity will update in my database. Once the quantity hits 0, a banner will show 'Out of Stock.' Users can create an account to view his past orders using Google, Github or email. For email, he will receive a magic link to sign in. The workflow is 1. User adds an item to his cart. 2. A cart-tracking cookie will be created and saved for 30 days. 3. User can add more items and update quantity. If quantity added is greater than product availability, then a notification will show on the top right corner. 4. User goes to checkout page and enters information. On payment success, an order will be created, the product availability will be updated, his cart cookie will be deleted and user will be redirected to success page. 5. User can create an account to view past orders. 6. Repeat 1-4.",
         technologiesUsed:
-            "Typescript, Tailwindcss, Nextjs, Next-Auth, Stripe, Supabase (Postgres), Prisma, Cloudinary, Git",
+            "Nextjs, Next-Auth, SendGrid, Stripe, Tailwindcss, Postgres, Prisma, Typescript, Git",
         gitHubLink: "https://github.com/BestVersion7/fashionstore",
+    },
+    {
+        title: "Travel Blog And CMS (Full Stack)",
+        url_link: "https://speedruntravel.com",
+        url_image:
+            "https://res.cloudinary.com/crimson-flamingo/video/upload/v1706216166/3105%20portfolio%20screenshots/speed.mp4",
+        description:
+            "The goal of this website is to share my travel adventures. It is a custom built CMS with an admin page that I can use to edit articles/photos. Users can post comments once signed in with Google. The article, user, comment data are stored to AWS RDS. For photo storage, I am using Cloudinary which caches photos for faster delivery. For newsletter subscription, I have incorporated SendGrid which automates the sending out emails. All the emails are sent out from info@speedruntravel.com which I created on Zoho mail.",
+        technologiesUsed:
+            "Nextjs,  Next-Auth, SendGrid, Prisma, Postgres, Material UI, SCSS, Typescript, Git",
+        gitHubLink: "https://github.com/BestVersion7/speedruntravel",
     },
     {
         title: "Doctor Appointment Booking Site (Full Stack)",
@@ -19,20 +30,8 @@ export const webProjects = [
         description:
             "The goal of this website is to inform users about mental health and allow them to book an appointment with a therapist. It is a full stack website that allows users to book an appointment with a therapist. I added a default test account to use to book the appointment. Once a date and time is booked, the availability on the calendar updates and is no longer available. I am using react-calendar to make the view easier and all the data is stored on RDS. The api is stored on this domain /api/booking. Lastly, I used Bootstrap for styling the buttons.",
         technologiesUsed:
-            "Typescript, Nextjs, AWS RDS (Postgres), Next-Auth, Stripe, SendGrid, Zoho Mail, Cloudinary, Bootstrap, SCSS, Git",
+            "Nextjs, Postgres, Bootstrap, Prisma, SCSS, Typescript, Git",
         gitHubLink: "https://github.com/BestVersion7/cooperpricehealth",
-    },
-
-    {
-        title: "Personal Travel Blog And CMS (Full Stack)",
-        url_link: "https://speedruntravel.com",
-        url_image:
-            "https://res.cloudinary.com/crimson-flamingo/video/upload/v1706216166/3105%20portfolio%20screenshots/speed.mp4",
-        description:
-            "The goal of this website is to share my travel adventures. It is a custom built CMS with an admin page that I can use to edit articles/photos. Users can post comments once signed in with Google. The article, user, comment data are stored to AWS RDS. For photo storage, I am using Cloudinary which caches photos for faster delivery. For newsletter subscription, I have incorporated SendGrid which automates the sending out emails. All the emails are sent out from info@speedruntravel.com which I created on Zoho mail.",
-        technologiesUsed:
-            "Typescript, Nextjs, AWS RDS (Postgres), Next-Auth, SendGrid, Zoho Mail, Google Analytics, Cloudinary, Prisma, Material UI, SCSS, Git",
-        gitHubLink: "https://github.com/BestVersion7/speedruntravel",
     },
 
     // {
