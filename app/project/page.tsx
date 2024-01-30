@@ -66,7 +66,7 @@ export default function ProjectPage() {
                     For example, creating a new article or a new post.
                 </p>
                 <h3>2. External APIs</h3>
-                <ol>
+                <ol className="list-disc mx-8">
                     <li>SendGrid</li>
                     <li>GoogleMaps</li>
                     <li>Stripe</li>

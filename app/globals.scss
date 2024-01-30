@@ -9,15 +9,11 @@
     .dropshadow2 {
         @apply shadow-md border-2 border-blue-500 border-solid rounded-md;
     }
-    .card {
-        @apply bg-green-50 border-2 border-purple-600 border-solid rounded-3xl shadow-lg;
-    }
+   
     .article h2 {
-        @apply tracking-wider font-semibold text-pink-500;
+        @apply tracking-wider font-semibold underline;
     }
-    .article ol li {
-        @apply bg-red-100
-    }
+   
 }
 
 @layer base {
