@@ -1,7 +1,12 @@
 export const metadata = {
     title: "Projects",
 };
+import { ProjectItem } from "@/components/ProjectItem";
 import Link from "next/link";
+import { personal } from "@/components/data/projects";
+import { webProjects } from "@/components/data/projects";
+const fashionStore = webProjects[0];
+const cooper = webProjects[1];
 
 export default function ProjectPage() {
     const awsLine = `psql --host=xxx.comxxxx --port=5432 --username=postgres --password --dbname=xxx`;
@@ -14,9 +19,265 @@ export default function ProjectPage() {
 );`;
 
     return (
-        <main className="article">
+        <main>
+            <span className="py-1 px-2 rounded-xl text-white bg-red-700">
+                Article written in Feb 2024
+            </span>
+            <div className="text-center mt-1">
+                <ProjectItem
+                    {...fashionStore}
+                    showVideo={false}
+                    showDesc={false}
+                />
+            </div>
             <div>
-                <h2>Implementation</h2>
+                <h2 className="h2article">Overview:</h2>
+                <p>
+                    This is a modern e-commerce website with all the features
+                    you need including:
+                </p>
+                <ul className="list-disc mx-8 grid sm:grid-cols-2 lg:grid-cols-3 ">
+                    <li>SEO Friendly</li>
+                    <li>Mobile responsive</li>
+                    <li>Search products</li>
+                    <li>Paginate products</li>
+                    <li>Account creation</li>
+                    <li>Payment Processing</li>
+                    <li>Product Review</li>
+                    <li>Purchase history</li>
+                    <li>Live product availability</li>
+                    <li>Message Notifications</li>
+                    <li>Email Notifications</li>
+                    <li>Google Analytics</li>
+                </ul>
+
+                <h2 className="h2article">Design Pattern & Layout</h2>
+                <p>
+                    The website is mobile responsive and looks great on both a
+                    phone, tablet and desktop. The design is inspired by
+                    amazon.com, temu.com and shopravella.com. I don't have a
+                    design background so it is quite difficult for me to
+                    understand what borders or shadows or colours work well
+                    together. Everything is by experimenting ctrl+c, ctrl+v and
+                    viewing it on the browser. I use tailwind for the design. It
+                    eases the burden of naming and remembering your own class
+                    names and I love it.
+                </p>
+
+                <h2 className="h2article">User Experience</h2>
+                <p>
+                    This is a mobile friendly website giving a great experience
+                    for mobile, tablet or desktop users. Everything scales well
+                    and colour and contrast is great. There is a working search
+                    bar, iOS and android friendly slideshow swiper for trending
+                    products. The contact forms and email notifications all work
+                    and secured.The images are low bandwidth and responsive. The
+                    products are cached which means fast loading on subsequent
+                    visits. The site is SEO friendly and most of the pages and
+                    product api calls are server rendered which means great
+                    google keyword tracking.And finally listeners for closing
+                    quantity dropdowns or search dropdown when you click outside
+                    of the target box (I had to google how to do this and it
+                    helps with the overall user experience.). I would give it a
+                    8.5/10. I feel like the landing page and colours could be
+                    improved.
+                </p>
+                <h2 className="h2article">Search & Pagination</h2>
+                <div>
+                    <p>
+                        In order to make this work, I need to get the total
+                        count of the active products and the products
+                        themselves. The total count divided by 24 would get me
+                        the page count and I would display the page numbers this
+                        like: 1,2,3 Next. On click, the router will push to
+                        ?page=2
+                    </p>
+                    <ul className="list-decimal mx-8">
+                        <li>SELECT COUNT(*) FROM product</li>
+                        <li>
+                            SELECT COUNT(*) FROM product WHERE
+                            product_category=dress
+                        </li>
+                        <li>
+                            SELECT COUNT(*) FROM product WHERE product_name
+                            CONTAINS name
+                        </li>
+                        <li>
+                            SELECT * FROM product LIMIT 24 OFFSET (page-1)*24
+                        </li>
+                        <li>
+                            SELECT * FROM product WHERE product_category=dress
+                            LIMIT 24 OFFSET (page-1)*24
+                        </li>
+                        <li>
+                            SELECT * FROM product WHERE product_name CONTAINS
+                            name LIMIT 24 OFFSET (page-1)*24
+                        </li>
+                    </ul>
+                </div>
+
+                <h2 className="h2article">Products & Prices Datascraping</h2>
+                <p>
+                    Only the products and prices data are scraped from Amazon. I
+                    use puppeteer to get the product image, product price, and
+                    product title from https://amazon.com/s?k=dress or
+                    https://amazon.com/s?k=bags. Then each product gets
+                    automatically saved to my own database. The reviews are all
+                    user generated and not scraped from Amazon.
+                </p>
+
+                <h2 className="h2article">Protected routes</h2>
+                <p>
+                    There are two routes I am protecting: /account and
+                    /api/order through middleware. For /account, the browser
+                    will check for an auth token and the user will be redirected
+                    to /signin if not logged in. The /api/order is protected by
+                    headers: {`{authorization:process.env.API_KEY}`}. This is an
+                    important api route to protect because the GET fetch
+                    requests are SELECT * FROM orders WHERE email = email If you
+                    have someone's email, you can see that person's whole order
+                    history and we don't want that.
+                </p>
+                <h2 className="h2article">Workflow of Site</h2>
+                <div>
+                    <ol className="list-decimal mx-8">
+                        <li>User adds a product.</li>
+                        <li>
+                            A cart cookie gets created and stored in browser for
+                            30 days.
+                        </li>
+                        <li>
+                            User makes updates/changes to cart and post and put
+                            requests will run in the backend to add or update
+                            quantity/products.
+                        </li>
+                        <li>
+                            A yellow notifications will pop up every time a new
+                            product is added or quantity is updated on the top
+                            right corner.
+                        </li>
+                        <li>
+                            User can checkout items in cart using a real or
+                            stripe test credit card that Stripe handles. Once
+                            card goes through, 4 api calls will run.
+                        </li>
+
+                        <li>
+                            <ol className="list-decimal mx-8">
+                                <li>
+                                    Check if the product is still available in
+                                    the rare chance it was purchased right as
+                                    you were checking out. If fail, notification
+                                    will appear asking you to update quantity or
+                                    remove from cart.
+                                </li>
+                                <li>
+                                    Decrease the quantity for each product you
+                                    purchased on the database.
+                                </li>
+                                <li>
+                                    Save the payment intent generated by stripe
+                                    and create an order
+                                </li>
+                                <li>
+                                    Clear the cart cookie so user can make new
+                                    orders.
+                                </li>
+                            </ol>
+                        </li>
+
+                        <li>
+                            User gets redirected to success page which shows the
+                            order number and shows what items you purchased,
+                            quantity and total for each.
+                        </li>
+                        <li>
+                            User can create an account with the same email used
+                            on the stripe checkout page to view past orders. You
+                            can create an account through Google, Facebook or
+                            typing in your email address. All these methods
+                            require you to verify your email. Once verified, you
+                            are signed in.
+                        </li>
+                        <li>
+                            You can navigate to /account or /account/orders page
+                            to update your name and view your orders.
+                        </li>
+                        <li>
+                            You can leave a product review any time and the name
+                            you used will show.
+                        </li>
+                    </ol>
+                </div>
+
+                <h2 className="h2article">Database/Storage</h2>
+                <div>
+                    <p>
+                        I am using Prisma (postgres) to write the api logic for
+                        the routes. Currently I have 11 tables + 1 table stored
+                        on Stripe database that each play an important role.
+                    </p>
+                </div>
+                <ol className="list-decimal mx-8">
+                    <li>Product - stores all product related info (cached) </li>
+                    <li>Price - stores all prices (cached) </li>
+                    <li>
+                        Product Availability - stores available quantity
+                        (not-cached)
+                    </li>
+                    <li>
+                        Cookie - stores the cookie generated when user adds an
+                        item to cart (cached){" "}
+                    </li>
+                    <li>
+                        Cart - stores each item with referencing cookie
+                        (not-cached)
+                    </li>
+                    <li>
+                        Order - stores each order and referencing payment intent
+                        (cached)
+                    </li>
+                    <li>
+                        Product Review - stores review data with referencing
+                        user (not-cached)
+                    </li>
+                    <li>User - stores unique users</li>
+                    <li>Account - stores account signin method</li>
+                    <li>Session - stores user session</li>
+                    <li>VerificationToken - stores authentication tokens</li>
+                    <li>
+                        StripeAPI PaymentIntent - stripe automatically creates a
+                        payment intent which stores vital data such as email,
+                        shipping info which I use to reference in the orders
+                        table
+                    </li>
+                </ol>
+            </div>
+            <video
+                controls
+                muted
+                autoPlay={false}
+                className="border-2 border-black"
+            >
+                <source type="video/mp4" src={fashionStore.url_image} /> Your
+                browser does not support playing this video
+            </video>
+
+            <div className="m-4 h-24 flex items-center justify-center border border-black border-dashed text-emerald-400 font-black tracking-widest text-3xl underline">
+                End
+            </div>
+            <div className="article">
+                <span className="py-1 px-2 rounded-xl text-white bg-red-700">
+                    Article written in Jan 2023
+                </span>
+                <div className="text-center mt-1">
+                    <ProjectItem
+                        {...personal}
+                        showVideo={false}
+                        showDesc={false}
+                    />
+                </div>
+                <h2 className="h2article">Implementation</h2>
                 <p>
                     This is full-stack website built using Next 13 and deployed
                     on Vercel server. I have created my own API and also use
@@ -26,7 +287,7 @@ export default function ProjectPage() {
                     Google Analytics tracking which is helpful for me to gauge
                     audience views.
                 </p>
-                <h2>Design</h2>
+                <h2 className="h2article">Design</h2>
                 <p>
                     The design approach I used is mobile friendly. I code
                     everything with the intention of mobile-view. Then, I would
@@ -39,7 +300,7 @@ export default function ProjectPage() {
                     styles easily and put them in variables, which is something
                     not possible in regular CSS. It saves time.
                 </p>
-                <h2>API</h2>
+                <h2 className="h2article">API</h2>
                 <ol>
                     <li>Custom API</li>
                     <li>External API</li>
@@ -97,7 +358,7 @@ export default function ProjectPage() {
                     my local machine. Plus, they offer free limit every month
                     for image transformation such as sizing, cropping, etc.
                 </p>
-                <h2>Dashboard</h2>
+                <h2 className="h2article">Dashboard</h2>
                 <p>
                     Since my website is built from scratch and using my own
                     database, it is critical to have a management system to be
@@ -121,7 +382,7 @@ export default function ProjectPage() {
                     markdown format and the package react-markdown is helpful
                     for that.
                 </p>
-                <h2>Database And Storage</h2>
+                <h2 className="h2article">Database And Storage</h2>
                 <p>
                     The database I use to store the database is in AWS RDS
                     Postgres. I decided to use Postgres because SQL is easier to
@@ -144,7 +405,7 @@ export default function ProjectPage() {
 
                 <pre className="bg-white overflow-scroll">{psqlLine}</pre>
 
-                <h2>Tools:</h2>
+                <h2 className="h2article">Tools:</h2>
                 <p>
                     The code editor I use to write my code is Visual Studio
                     Code. It is the most popular visual environment. The
@@ -152,7 +413,7 @@ export default function ProjectPage() {
                     everything public to share what I have learned coding.
                     Previously, the code was in a private repo.
                 </p>
-                <h2>Additional:</h2>
+                <h2 className="h2article">Additional:</h2>
                 <p>
                     I use Google Analytics for tracking. It is important to be
                     able to see views, bounce rates, popular links, etc. Also,

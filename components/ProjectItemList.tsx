@@ -14,6 +14,8 @@ const ProjectItemList = () => {
                         description={item.description}
                         technologiesUsed={item.technologiesUsed}
                         gitHubLink={item.gitHubLink}
+                        showVideo={true}
+                        showDesc={true}
                     />
                 );
             })}

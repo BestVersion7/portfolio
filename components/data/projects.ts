@@ -56,16 +56,16 @@ export const webProjects = [
     //         "React, MongoDB, ExpressJs, Heroku, Google Analytics, Git",
     //     gitHubLink: "https://github.com/BestVersion7/heroku-site",
     // },
-    // {
-    //     title: "Personal Professional Website (Full Stack)",
-    //     url_link: "https://hunterkf.com",
-    //     url_image:
-    //         "https://res.cloudinary.com/crimson-flamingo/video/upload/v1691376467/3105%20portfolio%20screenshots/My_Website_-_Personal_-_Microsoft_Edge_2023-08-06_22-32-04.mp4",
-    //     description:
-    //         "This is my personal website. It is a full stack site rewritten in 2023 to use Next 13.js (previously Next12) server side rendering for better SEO. It is also hosting all the api route that I use for my other projects including the booking app and my blog. All the API logic is centralized here and it is easier for me to maintain and separate front end and back end logic. It includes all the CRUD routes and application middleware for creating/updating articles, reels, comments, etc.",
-    //     // "This is a full stack website deployed on Heroku. The goal of this website is for me to write and share articles with you. I have created my own API: REST for user authentication, and SOCKET.io for live comments. I also have a master/admin page running on web sockets for me to publish, update, delete articles real time. All the data is stored on PostgreSQL.",
-    //     technologiesUsed:
-    //         "Typescript, Nextjs, Supabase (Postgres), Next-Auth, Cloudinary, Prisma, Tailwindcss, Git",
-    //     gitHubLink: "https://github.com/BestVersion7/trainingnext13",
-    // },
 ];
+export const personal = {
+    title: "Personal Professional Website (Full Stack)",
+    url_link: "https://hunterkf.com",
+    url_image:
+        "https://res.cloudinary.com/crimson-flamingo/video/upload/v1691376467/3105%20portfolio%20screenshots/My_Website_-_Personal_-_Microsoft_Edge_2023-08-06_22-32-04.mp4",
+    description:
+        "This is my personal website. It is a full stack site rewritten in 2023 to use Next 13.js (previously Next12) server side rendering for better SEO. It is also hosting all the api route that I use for my other projects including the booking app and my blog. All the API logic is centralized here and it is easier for me to maintain and separate front end and back end logic. It includes all the CRUD routes and application middleware for creating/updating articles, reels, comments, etc.",
+    // "This is a full stack website deployed on Heroku. The goal of this website is for me to write and share articles with you. I have created my own API: REST for user authentication, and SOCKET.io for live comments. I also have a master/admin page running on web sockets for me to publish, update, delete articles real time. All the data is stored on PostgreSQL.",
+    technologiesUsed:
+        "Typescript, Nextjs, Supabase (Postgres), Next-Auth, Cloudinary, Prisma, Tailwindcss, Git",
+    gitHubLink: "https://github.com/BestVersion7/trainingnext13",
+};
