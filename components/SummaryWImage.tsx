@@ -24,7 +24,7 @@ export const SummaryWImage = (props: props) => {
                 />
             </div>
             <p className="px-2 py-3">
-                <span className="font-semibold text-xl tracking-widest text-orange-600">
+                <span className="font-semibold tracking-widest text-orange-600">
                     {props.title1}
                 </span>
                 <span className="text-sm">{props.desc}</span>

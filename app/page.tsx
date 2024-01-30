@@ -29,10 +29,10 @@ export default function Home({
                 >
                     <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
-                    <div className="fixed inset-0 z-10 grid items-center justify-center text-center m-3">
-                        <div className=" bg-blue-100  max-w-md py-2 px-3">
+                    <div className="fixed inset-0 z-10 grid items-center justify-center text-center ">
+                        <div className=" bg-orange-200 rounded-lg shadow-lg w-72 h-[350px] max-w-md px-3 flex flex-col justify-center">
                             <h3
-                                className="text-base font-semibold  text-gray-900"
+                                className="text-xl font-semibold  text-gray-900"
                                 id="modal-title"
                             >
                                 Contact me

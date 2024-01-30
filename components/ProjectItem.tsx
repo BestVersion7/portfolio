@@ -10,8 +10,10 @@ type IProject = {
 
 export const ProjectItem = (props: IProject) => {
     return (
-        <article className="border border-slate-800 px-1 sm:px-3 py-4 flex gap-2 flex-col  rounded-2xl shadow-md">
-            <h2 className="  tracking-wider ">{props.title}</h2>
+        <article className="border border-slate-800 px-1 sm:px-3 py-4 flex gap-y-1 flex-col rounded-2xl shadow-md">
+            <h3 className="text-lg text-white py-1 font-medium bg-cyan-700 tracking-wider ">
+                {props.title}
+            </h3>
 
             <h3>Link to Project</h3>
             <span>
@@ -25,7 +27,7 @@ export const ProjectItem = (props: IProject) => {
                 </a>
             </span>
 
-            <h3>Link to Code: </h3>
+            {/* <h3>Link to Code: </h3> */}
             <span>
                 <a
                     className="break-all underline hover:bg-yellow-400"
@@ -37,7 +39,7 @@ export const ProjectItem = (props: IProject) => {
                 </a>
             </span>
 
-            <h3>Technologies Used:</h3>
+            <h3 className="">Technologies Used:</h3>
             <span>{props.technologiesUsed}</span>
 
             <video

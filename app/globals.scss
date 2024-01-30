@@ -13,7 +13,7 @@
         @apply bg-green-50 border-2 border-purple-600 border-solid rounded-3xl shadow-lg;
     }
     .article h2 {
-        @apply text-2xl tracking-wider font-semibold text-pink-500;
+        @apply tracking-wider font-semibold text-pink-500;
     }
     .article ol li {
         @apply bg-red-100
@@ -22,13 +22,11 @@
 
 @layer base {
     body {
-        @apply p-0 m-auto  bg-gray-50;
+        @apply p-0 m-auto  bg-white;
     }
-    h3 {
-        @apply text-xl;
-    }
+   
     main {
-        @apply  max-w-[1550px] m-auto px-4 py-3;
+        @apply  max-w-6xl m-auto px-4 py-3;
     }
     main h2 {
         @apply text-2xl text-center font-semibold text-violet-600  py-2 rounded-lg 

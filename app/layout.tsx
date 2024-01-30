@@ -21,7 +21,7 @@ export default function RootLayout({
         <html lang="en">
             <GoogleAnalytics />
             <body className={inter.className}>
-                <header className="bg-orange-600 text-white font-medium">
+                <header className="bg-orange-600 text-white font-medium sticky top-0 z-30">
                     <nav className=" gap-5 text-lg py-3 flex items-center justify-end mr-5">
                         <Link
                             className="tracking-wider hover:text-green-300 "
@@ -35,12 +35,6 @@ export default function RootLayout({
                             href="/project"
                         >
                             Projects
-                        </Link>
-                        <Link
-                            className="tracking-wider  hover:text-green-300"
-                            href="/article"
-                        >
-                            Article
                         </Link>
                     </nav>
                 </header>

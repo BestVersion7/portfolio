@@ -8,7 +8,7 @@ export const webProjects = [
         description:
             "This is an e-commerce site built using Stripe API. Users can purchase products, update or delete quantity, create an account to view past orders and more. The availability of the products are real-time and once a user successfully purchases an item, an order will be created and the available product quantity will update in my database. Once the quantity hits 0, a banner will show 'Out of Stock.' Users can create an account to view his past orders using Google, Github or email. For email, he will receive a magic link to sign in. The workflow is 1. User adds an item to his cart. 2. A cart-tracking cookie will be created and saved for 30 days. 3. User can add more items and update quantity. If quantity added is greater than product availability, then a notification will show on the top right corner. 4. User goes to checkout page and enters information. On payment success, an order will be created, the product availability will be updated, his cart cookie will be deleted and user will be redirected to success page. 5. User can create an account to view past orders. 6. Repeat 1-4.",
         technologiesUsed:
-            "Nextjs, Next-Auth, SendGrid, Stripe, Tailwindcss, Postgres, Prisma, Typescript, Git",
+            "Nextjs, Next-Auth, SendGrid, Stripe, Tailwindcss, Postgres, Prisma, Typescript, Git, Puppeteer",
         gitHubLink: "https://github.com/BestVersion7/fashionstore",
     },
     {
