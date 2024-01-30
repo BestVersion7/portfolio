@@ -55,7 +55,7 @@ export default function ProjectPage() {
                 <p>
                     The website is mobile responsive and looks great on both a
                     phone, tablet and desktop. The design is inspired by
-                    amazon.com, temu.com and shopravella.com. I don't have a
+                    amazon.com, temu.com and shopravella.com. I don{`'`}t have a
                     design background so it is quite difficult for me to
                     understand what borders or shadows or colours work well
                     together. Everything is by experimenting ctrl+c, ctrl+v and
@@ -135,8 +135,8 @@ export default function ProjectPage() {
                     headers: {`{authorization:process.env.API_KEY}`}. This is an
                     important api route to protect because the GET fetch
                     requests are SELECT * FROM orders WHERE email = email If you
-                    have someone's email, you can see that person's whole order
-                    history and we don't want that.
+                    have someone{`'`}s email, you can see that person{`'`}s
+                    whole order history and we don{`'`}t want that.
                 </p>
                 <h2 className="h2article">Workflow of Site</h2>
                 <div>
