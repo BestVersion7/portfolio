@@ -458,6 +458,9 @@ export default function ProjectPage() {
                     because there is not enough content. :)
                 </p>
             </div>
+            <div className="m-4 h-24 flex items-center justify-center border border-black border-dashed text-emerald-400 font-black tracking-widest text-3xl underline">
+                End
+            </div>
         </main>
     );
 }

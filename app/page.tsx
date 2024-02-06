@@ -19,29 +19,12 @@ export default function Home() {
                 <SummaryWImage
                     img="https://res.cloudinary.com/crimson-flamingo/image/upload/v1704991935/1104%20profile/me2.png"
                     title1="Summary:"
-                    desc="I am a
-                    self-taught full stack web developer with a background in
-                    finance. In the past 3+ years, I have worked in the
-                    accounting departments for startups and large corporations.
-                    Besides work, I enjoy building websites and learning new
-                    technologies. My current favorite technology stack is
-                    Next.js (with amazing SSR load times and SEO), TailwindCSS
-                    (for fast and consistent styling pattern), Prisma (for
-                    building api logic and connecting with database), Postgres
-                    (for their award winning database and I love SQL), and
-                    StripeJS (every monetized needs this)."
+                    desc="I am a self-taught full stack web developer with a background in finance. In the past 4+ years, I have worked in the accounting departments for startups and large corporations Besides work, I enjoy learning tech and built my first website in 2019. My current favorite technologies include Next.js, Tailwindcss, Postgres, Prisma, Stripe and more."
                 />
                 <SummaryWImage
                     img="https://res.cloudinary.com/crimson-flamingo/image/upload/v1704991935/1104%20profile/suffolk2.webp"
                     title1="Education:"
-                    desc="I graduated Suffolk University in May 2019 located in Boston,
-                    MA. During my time here, I got to meet diverse and
-                    interesting people. Through class and my own studies, I got
-                    hands on experience building mobile apps, consulting,
-                    designing database architecture. My favorite class that has
-                    shaped my long lusting journey of learning include database
-                    classes, intro to programming class, intro to javascript
-                    class."
+                    desc="I graduated Suffolk University in May 2019 located in Boston, MA. During my time here, I got to meet diverse and interesting people. Through class and on my own, I developed websites, mobile apps, and designed database structures. I was inspired to learn more about web development after."
                 />
             </section>
 
