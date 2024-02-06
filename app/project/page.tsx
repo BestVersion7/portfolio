@@ -86,23 +86,24 @@ export default function ProjectPage() {
                     <ul className="list-decimal mx-8">
                         <li>SELECT COUNT(*) FROM product</li>
                         <li>
-                            SELECT COUNT(*) FROM product WHERE
-                            product_category='dress'
+                            SELECT COUNT(*) FROM product WHERE product_category=
+                            {`'`}dress{`'`}
                         </li>
                         <li>
                             SELECT COUNT(*) FROM product WHERE product_name
-                            CONTAINS 'abc'
+                            CONTAINS {`'`}abc{`'`}
                         </li>
                         <li>
                             SELECT * FROM product LIMIT 24 OFFSET (page-1)*24
                         </li>
                         <li>
-                            SELECT * FROM product WHERE product_category='dress'
+                            SELECT * FROM product WHERE product_category={`'`}
+                            dress{`'`}
                             LIMIT 24 OFFSET (page-1)*24
                         </li>
                         <li>
                             SELECT * FROM product WHERE product_name CONTAINS
-                            'abc' LIMIT 24 OFFSET (page-1)*24
+                            {`'`}abc{`'`} LIMIT 24 OFFSET (page-1)*24
                         </li>
                     </ul>
                 </div>

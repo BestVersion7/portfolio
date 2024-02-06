@@ -1,7 +1,6 @@
 import ProjectItemList from "@/components/ProjectItemList";
 import WorkExperienceItemList from "@/components/WorkExperienceItemList";
 import { SummaryWImage } from "@/components/SummaryWImage";
-import { ContactForm } from "@/components/ContactForm";
 import { SkillItemMap } from "@/components/SkillItemMap";
 import {
     businessSkills,
@@ -11,11 +10,7 @@ import {
     toolSkills,
 } from "@/components/data/skills";
 
-export default function Home({
-    searchParams,
-}: {
-    searchParams: { modal: "t" | "f" };
-}) {
+export default function Home() {
     return (
         <main>
             <h2>My Story</h2>
