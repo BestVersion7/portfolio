@@ -1,7 +1,6 @@
 import ProjectItemList from "@/components/ProjectItemList";
 import WorkExperienceItemList from "@/components/WorkExperienceItemList";
 import { SummaryWImage } from "@/components/SummaryWImage";
-import { ContactBtn } from "@/components/ContactBtn";
 import { ContactForm } from "@/components/ContactForm";
 import { SkillItemMap } from "@/components/SkillItemMap";
 import {
@@ -19,32 +18,6 @@ export default function Home({
 }) {
     return (
         <main>
-            {/* this is the fixed contact btn */}
-            {searchParams.modal === "t" && (
-                <div
-                    className="relative z-10"
-                    aria-labelledby="modal-title"
-                    role="dialog"
-                    aria-modal="true"
-                >
-                    <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-
-                    <div className="fixed inset-0 z-10 grid items-center justify-center text-center ">
-                        <div className=" bg-orange-200 rounded-lg shadow-lg w-72 h-[350px] max-w-md px-3 flex flex-col justify-center">
-                            <h3
-                                className="text-xl font-semibold  text-gray-900"
-                                id="modal-title"
-                            >
-                                Contact me
-                            </h3>
-
-                            <ContactForm />
-                        </div>
-                    </div>
-                </div>
-            )}
-            <ContactBtn />
-
             <h2>My Story</h2>
 
             <section className=" mt-2 grid gap-3 lg:grid-cols-2 ">

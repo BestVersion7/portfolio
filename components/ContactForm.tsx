@@ -25,7 +25,7 @@ export const ContactForm = () => {
     };
 
     const handleClose = () => {
-        router.push("/", { scroll: false });
+        router.push(window.location.pathname, { scroll: false });
     };
     return (
         <div>

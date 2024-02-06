@@ -3,16 +3,7 @@ import { NextResponse, NextRequest } from "next/server";
 
 export async function GET() {
     try {
-        const data = await prisma.commenttb.findMany({
-            orderBy: {
-                comment_id: "desc",
-            },
-            select: {
-                comment_id: true,
-                comment_body: true,
-                comment_user_name: true,
-            },
-        });
+        const data = await prisma.productInfo.findMany();
         return NextResponse.json(data);
     } catch (err) {
         return NextResponse.json("fail", { status: 500 });
@@ -58,7 +49,7 @@ export async function PUT(req: NextRequest) {
                 comment_user_name,
             },
         });
-        return NextResponse.json('updated');
+        return NextResponse.json("updated");
     } catch (err) {
         return NextResponse.json("fail", { status: 500 });
     }

@@ -3,32 +3,33 @@ import { NextResponse } from "next/server";
 
 export async function GET(req) {
     try {
-        let data;
-        const article_id = req.nextUrl.searchParams.get("article_id");
+        // let data;
+        // const article_id = req.nextUrl.searchParams.get("article_id");
 
-        if (isNaN(article_id)) {
-            return NextResponse.json(null, { status: 200 });
-        }
+        // if (isNaN(article_id)) {
+        //     return NextResponse.json(null, { status: 200 });
+        // }
 
-        if (article_id) {
-            data = await prisma.blog.findUnique({
-                where: {
-                    article_id: parseInt(article_id),
-                },
-            });
-        } else {
-            data = await prisma.blog.findMany({
-                orderBy: {
-                    article_date: "desc",
-                },
-                include: {
-                    comment: true
-                }
-            });
-        }
+        // if (article_id) {
+        //     data = await prisma.blog.findUnique({
+        //         where: {
+        //             article_id: parseInt(article_id),
+        //         },
+        //     });
+        // } else {
+        //     data = await prisma.blog.findMany({
+        //         orderBy: {
+        //             article_date: "desc",
+        //         },
+        //         include: {
+        //             comment: true
+        //         }
+        //     });
+        // }
+        const data = await prisma.blog.findMany();
         return NextResponse.json(data);
     } catch (err) {
-        return NextResponse.json("Fail", { status: 500 });
+        return NextResponse.json(err, { status: 500 });
     }
 }
 

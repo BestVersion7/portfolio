@@ -6,7 +6,6 @@ import Link from "next/link";
 import { personal } from "@/components/data/projects";
 import { webProjects } from "@/components/data/projects";
 const fashionStore = webProjects[0];
-const cooper = webProjects[1];
 
 export default function ProjectPage() {
     const awsLine = `psql --host=xxx.comxxxx --port=5432 --username=postgres --password --dbname=xxx`;
@@ -53,78 +52,100 @@ export default function ProjectPage() {
 
                 <h2 className="h2article">Design Pattern & Layout</h2>
                 <p>
-                    The website is mobile responsive and looks great on both a
-                    phone, tablet and desktop. The design is inspired by
-                    amazon.com, temu.com and shopravella.com. I don{`'`}t have a
-                    design background so it is quite difficult for me to
-                    understand what borders or shadows or colours work well
-                    together. Everything is by experimenting ctrl+c, ctrl+v and
-                    viewing it on the browser. I use tailwind for the design. It
-                    eases the burden of naming and remembering your own class
-                    names and I love it.
+                    The design is inspired by amazon.com, temu.com and
+                    shopravella.com. I use tailwind for faster development and I
+                    like the easy to remember naming convention.
                 </p>
 
                 <h2 className="h2article">User Experience</h2>
                 <p>
                     This is a mobile friendly website giving a great experience
                     for mobile, tablet or desktop users. Everything scales well
-                    and colour and contrast is great. There is a working search
+                    and colour and contrast is great. The images are responsive
+                    and optimized which means lower loading times for mobile
+                    phones. Some of data is being cached which means lower page
+                    load times on subsequent visits. There is a working search
                     bar, iOS and android friendly slideshow swiper for trending
-                    products. The contact forms and email notifications all work
-                    and secured.The images are low bandwidth and responsive. The
-                    products are cached which means fast loading on subsequent
-                    visits. The site is SEO friendly and most of the pages and
+                    products. The site is SEO friendly and most of the pages and
                     product api calls are server rendered which means great
-                    google keyword tracking.And finally listeners for closing
-                    quantity dropdowns or search dropdown when you click outside
-                    of the target box (I had to google how to do this and it
-                    helps with the overall user experience.). I would give it a
-                    8.5/10. I feel like the landing page and colours could be
-                    improved.
+                    google keyword tracking. And finally, there are event
+                    listeners for closing dropdowns such as the search bar
+                    dropdown when clicking away from the target box.
                 </p>
                 <h2 className="h2article">Search & Pagination</h2>
                 <div>
                     <p>
-                        In order to make this work, I need to get the total
-                        count of the active products and the products
-                        themselves. The total count divided by 24 would get me
-                        the page count and I would display the page numbers this
-                        like: 1,2,3 Next. On click, the router will push to
-                        ?page=2
+                        For pagination, I need to get the total count of the
+                        product. Then I needed to get the page count and I am
+                        using 24 products per page so product_count/24 gives me
+                        the page count. The minimum page would be 1 and the
+                        maximum would be 4. If there were more than 4 pages, I
+                        would use 1,2,3,[last_number]. On button click, the
+                        router will push to ?page=2. Below is the SQL code.
                     </p>
                     <ul className="list-decimal mx-8">
                         <li>SELECT COUNT(*) FROM product</li>
                         <li>
                             SELECT COUNT(*) FROM product WHERE
-                            product_category=dress
+                            product_category='dress'
                         </li>
                         <li>
                             SELECT COUNT(*) FROM product WHERE product_name
-                            CONTAINS name
+                            CONTAINS 'abc'
                         </li>
                         <li>
                             SELECT * FROM product LIMIT 24 OFFSET (page-1)*24
                         </li>
                         <li>
-                            SELECT * FROM product WHERE product_category=dress
+                            SELECT * FROM product WHERE product_category='dress'
                             LIMIT 24 OFFSET (page-1)*24
                         </li>
                         <li>
                             SELECT * FROM product WHERE product_name CONTAINS
-                            name LIMIT 24 OFFSET (page-1)*24
+                            'abc' LIMIT 24 OFFSET (page-1)*24
                         </li>
                     </ul>
                 </div>
 
                 <h2 className="h2article">Products & Prices Datascraping</h2>
-                <p>
+                <div>
                     Only the products and prices data are scraped from Amazon. I
                     use puppeteer to get the product image, product price, and
                     product title from https://amazon.com/s?k=dress or
-                    https://amazon.com/s?k=bags. Then each product gets
-                    automatically saved to my own database. The reviews are all
-                    user generated and not scraped from Amazon.
-                </p>
+                    https://amazon.com/s?k=bags.
+                    <br />
+                    Then the for loop code runs which does:
+                    <ol className="list-decimal mx-8">
+                        <li>
+                            Check Product table and make sure the name does not
+                            exist
+                        </li>
+                        <li>
+                            Create a product in Product Table and returns the
+                            product_id
+                        </li>
+                        <li>
+                            Create a price in Price Table with the product_id
+                            foreign key and returns price_id
+                        </li>
+                        <li>
+                            Update a product in Product Table with the price_id
+                        </li>
+                        <li>
+                            Create availability in ProductAvailability Table
+                            with product_id foreign key and default
+                            available_quantity of 3
+                        </li>
+                    </ol>
+                    <code className="bg-slate-700 text-white"></code>
+                    Then I have a for loop, which for every product, it will
+                    save the three data points plus additional data saved to
+                    Product table. After, the price creates and I set the
+                    availability to 3 for each product that was created and
+                    saves to Price Table. Then each product gets automatically
+                    saved to my own database. The reviews are all user generated
+                    and not scraped from Amazon.
+                </div>
 
                 <h2 className="h2article">Protected routes</h2>
                 <p>
@@ -219,37 +240,51 @@ export default function ProjectPage() {
                     </p>
                 </div>
                 <ol className="list-decimal mx-8">
-                    <li>Product - stores all product related info (cached) </li>
-                    <li>Price - stores all prices (cached) </li>
                     <li>
-                        Product Availability - stores available quantity
-                        (not-cached)
+                        Product - stores all product related info (cached for 24
+                        hours)
+                    </li>
+                    <li>
+                        Price - stores all prices - One product can have
+                        multiple prices. GET, POST requests only (cached
+                        forever)
+                    </li>
+                    <li>
+                        Product Availability - stores available quantity; GET,
+                        POST, PUT requests only (not-cached)
                     </li>
                     <li>
                         Cookie - stores the cookie generated when user adds an
-                        item to cart (cached){" "}
+                        item to cart; GET, POST requests only (cached forever)
                     </li>
                     <li>
-                        Cart - stores each item with referencing cookie
-                        (not-cached)
+                        Cart - stores each item with referencing cookie; GET,
+                        POST, PUT requests only (not-cached)
                     </li>
                     <li>
-                        Order - stores each order and referencing payment intent
-                        (cached)
+                        Order - stores each order and referencing payment
+                        intent; GET, POST requests only (cached forever)
                     </li>
                     <li>
                         Product Review - stores review data with referencing
-                        user (not-cached)
+                        user; GET, POST requests only (not-cached)
                     </li>
-                    <li>User - stores unique users</li>
-                    <li>Account - stores account signin method</li>
-                    <li>Session - stores user session</li>
-                    <li>VerificationToken - stores authentication tokens</li>
                     <li>
-                        StripeAPI PaymentIntent - stripe automatically creates a
-                        payment intent which stores vital data such as email,
-                        shipping info which I use to reference in the orders
-                        table
+                        User - stores unique user id; GET, POST, PUT requests
+                        only (not-cached)
+                    </li>
+                    <li>
+                        Account - stores account sign-in method; POST requests
+                        only
+                    </li>
+                    <li>Session - stores session data; POST requests only</li>
+                    <li>
+                        VerificationToken - stores authentication tokens; POST
+                        requests only
+                    </li>
+                    <li>
+                        PaymentIntent - this is a table on the Stripe database -
+                        GET, POST, PUT requests only (cached forever)
                     </li>
                 </ol>
             </div>
@@ -298,7 +333,7 @@ export default function ProjectPage() {
                     and Material UI. I like the color design of MUI which is why
                     I chose that. SCSS is a game changer because I can reuse
                     styles easily and put them in variables, which is something
-                    not possible in regular CSS. It saves time.
+                    not possible in regular CSS.
                 </p>
                 <h2 className="h2article">API</h2>
                 <ol>

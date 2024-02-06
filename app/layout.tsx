@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Link from "next/link";
+import { ContactBtn } from "@/components/ContactBtn";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({
                     </nav>
                 </header>
                 {children}
+                <ContactBtn />
                 <Footer />
             </body>
         </html>
