@@ -1,4 +1,16 @@
 export const webProjects = [
+    {
+        title: "Youtube Clone (Full Stack)",
+        url_link: "https://watchyoutube.vercel.app",
+        url_image:
+            "https://res.cloudinary.com/crimson-flamingo/video/upload/v1708387819/3105%20portfolio%20screenshots/youtubeclone.mp4",
+        description:
+            "This is Youtube clone website. The video thumbnails and video links are cached for one hour and then refreshes for new data. All the data is being fetched from their API. I also incorporated my own database to automatically save the thumbnails when fetching it. Their daily limit is 10K requests. When I fetch 50 videos, it is one request and it gives me a channelId which I can search the channel thumbnail. The thumbnail search is a separate request and for 50 videos, it will run 50 separate requests to get 50 thumbnails, therefore, every page load will run 51 requests. This won't scale well (only up to 200 website loads/day). With this in mind, using my own database will scale more efficiently and can run from 200 page loads to 10K page loads per day.",
+
+        technologiesUsed:
+            "Nextjs, Tailwindcss, Postgres, Youtube API, Prisma, Typescript, Git ",
+        gitHubLink: "https://github.com/BestVersion7/youtubeclone",
+    },
     // webscrape
     {
         title: "E-Commerce Stripe Store (Full Stack)",

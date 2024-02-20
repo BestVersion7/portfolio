@@ -19,6 +19,43 @@ export default function ProjectPage() {
 
     return (
         <main>
+            <div>
+                <h3>Summary of Projects</h3>
+                <ol className="list-decimal mx-8">
+                    <li>
+                        Youtube Clone -
+                        <Link
+                            target="_blank"
+                            href="https://watchyoutube.vercel.app/"
+                            className="bg-yellow-200 hover:underline px-2"
+                        >
+                            https://watchyoutube.vercel.app
+                        </Link>
+                    </li>
+                    <li>
+                        E-Commerce Store -
+                        <Link
+                            target="_blank"
+                            href="https://afashionstore.vercel.app/"
+                            className="bg-yellow-200 hover:underline px-2"
+                        >
+                            https://afashionstore.vercel.app
+                        </Link>
+                    </li>
+                    <li>
+                        Travel Blog -
+                        <Link
+                            target="_blank"
+                            href="https://speedruntravel.com/"
+                            className="bg-yellow-200 hover:underline px-2"
+                        >
+                            https://speedruntravel.com
+                        </Link>
+                    </li>
+                </ol>
+            </div>
+            <br />
+
             <span className="py-1 px-2 rounded-xl text-white bg-red-700">
                 Article written in Feb 2024
             </span>
