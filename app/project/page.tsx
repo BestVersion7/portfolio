@@ -5,7 +5,7 @@ import { ProjectItem } from "@/components/ProjectItem";
 import Link from "next/link";
 import { personal } from "@/components/data/projects";
 import { webProjects } from "@/components/data/projects";
-const fashionStore = webProjects[0];
+const fashionStore = webProjects[1];
 
 export default function ProjectPage() {
     const awsLine = `psql --host=xxx.comxxxx --port=5432 --username=postgres --password --dbname=xxx`;
