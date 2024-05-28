@@ -46,10 +46,10 @@ export default function ProjectPage() {
                         Travel Blog -
                         <Link
                             target="_blank"
-                            href="https://speedruntravel.com/"
+                            href="https://speedruntravel.vercel.app"
                             className="bg-yellow-200 hover:underline px-2"
                         >
-                            https://speedruntravel.com
+                            https://speedruntravel.vercel.app
                         </Link>
                     </li>
                 </ol>
@@ -439,9 +439,9 @@ export default function ProjectPage() {
                     that allows me to do just that. On{" "}
                     <Link
                         className="break-words"
-                        href="https://www.speedruntravel.com/dashboard"
+                        href="https://www.speedruntravel.vercel.app/dashboard"
                     >
-                        https://www.speedruntravel.com/dashboard
+                        https://www.speedruntravel.vercel.app/dashboard
                     </Link>
                     , you can see all my public and private articles and reels
                     and this content is not cached and run every time. On this

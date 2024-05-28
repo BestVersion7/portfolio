@@ -25,7 +25,7 @@ export const webProjects = [
     },
     {
         title: "Travel Blog And CMS (Full Stack)",
-        url_link: "https://speedruntravel.com",
+        url_link: "https://speedruntravel.vercel.app",
         url_image:
             "https://res.cloudinary.com/crimson-flamingo/video/upload/v1706216166/3105%20portfolio%20screenshots/speed.mp4",
         description:
