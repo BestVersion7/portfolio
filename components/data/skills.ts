@@ -53,6 +53,24 @@ export const businessSkills = [
         starHalf: 0,
         star: 1,
     },
+    {
+        skillName: "Aderant",
+        starFill: 4,
+        starHalf: 1,
+        star: 0,
+    },
+    {
+        skillName: "BillBlast",
+        starFill: 4,
+        starHalf: 1,
+        star: 0,
+    },
+    {
+        skillName: "PowerBI",
+        starFill: 4,
+        starHalf: 0,
+        star: 1,
+    },
 ];
 
 export const webDevelopmentSkills = [

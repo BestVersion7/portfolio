@@ -1,10 +1,17 @@
 export const workExperience = [
     {
+        Company: "Wilson Sonsini Goorich & Rosati",
+        Position: "Account Manager",
+        Summary:
+            "Highlight: In this role, I am supporting billing and collections for 36 partners and managing a portfolio of 250 clients, which is higher than the average of my peers at 12 partners and 200 clients.",
+        Date: "Oct 2025 - Present",
+    },
+    {
         Company: "Covington & Burling LLP",
         Position: "Billing Coordinator",
         Summary:
             "Highlight: Wrote Adobe Acrobat code (javascript) to automate extracting pages from report and saving them to different folders. We sent out these folders to attorneys each month. Saved 700 hours per year!",
-        Date: "Feb 2021 - Present",
+        Date: "Feb 2021 - Oct 2025",
     },
     {
         Company: "PTC (thru Addison Staffing Group)",
