@@ -34,7 +34,7 @@ const Footer = () => {
                     />
                 </a>
             </div>
-            2024 - <b>www.hunterkf.com</b>
+            2026 - <b>www.hunterkf.com</b>
         </footer>
     );
 };
